@@ -13,14 +13,15 @@
 		27C3A29317FDF06E000296D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27C3A29117FDF06E000296D0 /* InfoPlist.strings */; };
 		27C3A29517FDF06E000296D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A29417FDF06E000296D0 /* main.m */; };
 		27C3A29917FDF06E000296D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A29817FDF06E000296D0 /* AppDelegate.m */; };
-		27C3A29C17FDF06E000296D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27C3A29A17FDF06E000296D0 /* Main.storyboard */; };
-		27C3A29F17FDF06E000296D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A29E17FDF06E000296D0 /* ViewController.m */; };
-		27C3A2A117FDF06E000296D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27C3A2A017FDF06E000296D0 /* Images.xcassets */; };
+		27C3A29C17FDF06E000296D0 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27C3A29A17FDF06E000296D0 /* iPhone.storyboard */; };
 		27C3A2A817FDF06E000296D0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A2A717FDF06E000296D0 /* XCTest.framework */; };
 		27C3A2A917FDF06E000296D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28817FDF06E000296D0 /* Foundation.framework */; };
 		27C3A2AA17FDF06E000296D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28C17FDF06E000296D0 /* UIKit.framework */; };
 		27C3A2B217FDF06E000296D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27C3A2B017FDF06E000296D0 /* InfoPlist.strings */; };
 		27C3A2B417FDF06E000296D0 /* YoutubePracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A2B317FDF06E000296D0 /* YoutubePracticeTests.m */; };
+		27C3A2BF17FDF0C4000296D0 /* YoutubeEmbedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A2BE17FDF0C4000296D0 /* YoutubeEmbedViewController.m */; };
+		27C3A2C217FDF62D000296D0 /* NoahDancingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A2C117FDF62D000296D0 /* NoahDancingViewController.m */; };
+		27C3A2C517FDF891000296D0 /* YoutubeVideosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A2C417FDF891000296D0 /* YoutubeVideosTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,15 +45,18 @@
 		27C3A29617FDF06E000296D0 /* YoutubePractice-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YoutubePractice-Prefix.pch"; sourceTree = "<group>"; };
 		27C3A29717FDF06E000296D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		27C3A29817FDF06E000296D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		27C3A29B17FDF06E000296D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		27C3A29D17FDF06E000296D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		27C3A29E17FDF06E000296D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		27C3A2A017FDF06E000296D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		27C3A29B17FDF06E000296D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		27C3A2A617FDF06E000296D0 /* YoutubePracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoutubePracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C3A2A717FDF06E000296D0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		27C3A2AF17FDF06E000296D0 /* YoutubePracticeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YoutubePracticeTests-Info.plist"; sourceTree = "<group>"; };
 		27C3A2B117FDF06E000296D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27C3A2B317FDF06E000296D0 /* YoutubePracticeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YoutubePracticeTests.m; sourceTree = "<group>"; };
+		27C3A2BD17FDF0C4000296D0 /* YoutubeEmbedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeEmbedViewController.h; sourceTree = "<group>"; };
+		27C3A2BE17FDF0C4000296D0 /* YoutubeEmbedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeEmbedViewController.m; sourceTree = "<group>"; };
+		27C3A2C017FDF62D000296D0 /* NoahDancingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoahDancingViewController.h; sourceTree = "<group>"; };
+		27C3A2C117FDF62D000296D0 /* NoahDancingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoahDancingViewController.m; sourceTree = "<group>"; };
+		27C3A2C317FDF891000296D0 /* YoutubeVideosTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeVideosTVC.h; sourceTree = "<group>"; };
+		27C3A2C417FDF891000296D0 /* YoutubeVideosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeVideosTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +116,14 @@
 		27C3A28E17FDF06E000296D0 /* YoutubePractice */ = {
 			isa = PBXGroup;
 			children = (
-				27C3A29717FDF06E000296D0 /* AppDelegate.h */,
-				27C3A29817FDF06E000296D0 /* AppDelegate.m */,
-				27C3A29A17FDF06E000296D0 /* Main.storyboard */,
-				27C3A29D17FDF06E000296D0 /* ViewController.h */,
-				27C3A29E17FDF06E000296D0 /* ViewController.m */,
-				27C3A2A017FDF06E000296D0 /* Images.xcassets */,
+				27C3A29A17FDF06E000296D0 /* iPhone.storyboard */,
+				27C3A2C017FDF62D000296D0 /* NoahDancingViewController.h */,
+				27C3A2C117FDF62D000296D0 /* NoahDancingViewController.m */,
+				27C3A2BD17FDF0C4000296D0 /* YoutubeEmbedViewController.h */,
+				27C3A2BE17FDF0C4000296D0 /* YoutubeEmbedViewController.m */,
 				27C3A28F17FDF06E000296D0 /* Supporting Files */,
+				27C3A2C317FDF891000296D0 /* YoutubeVideosTVC.h */,
+				27C3A2C417FDF891000296D0 /* YoutubeVideosTVC.m */,
 			);
 			path = YoutubePractice;
 			sourceTree = "<group>";
@@ -126,6 +131,8 @@
 		27C3A28F17FDF06E000296D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27C3A29717FDF06E000296D0 /* AppDelegate.h */,
+				27C3A29817FDF06E000296D0 /* AppDelegate.m */,
 				27C3A29017FDF06E000296D0 /* YoutubePractice-Info.plist */,
 				27C3A29117FDF06E000296D0 /* InfoPlist.strings */,
 				27C3A29417FDF06E000296D0 /* main.m */,
@@ -228,9 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27C3A2A117FDF06E000296D0 /* Images.xcassets in Resources */,
 				27C3A29317FDF06E000296D0 /* InfoPlist.strings in Resources */,
-				27C3A29C17FDF06E000296D0 /* Main.storyboard in Resources */,
+				27C3A29C17FDF06E000296D0 /* iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27C3A29F17FDF06E000296D0 /* ViewController.m in Sources */,
+				27C3A2BF17FDF0C4000296D0 /* YoutubeEmbedViewController.m in Sources */,
 				27C3A29917FDF06E000296D0 /* AppDelegate.m in Sources */,
+				27C3A2C517FDF891000296D0 /* YoutubeVideosTVC.m in Sources */,
 				27C3A29517FDF06E000296D0 /* main.m in Sources */,
+				27C3A2C217FDF62D000296D0 /* NoahDancingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,12 +290,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		27C3A29A17FDF06E000296D0 /* Main.storyboard */ = {
+		27C3A29A17FDF06E000296D0 /* iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				27C3A29B17FDF06E000296D0 /* Base */,
 			);
-			name = Main.storyboard;
+			name = iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		27C3A2B017FDF06E000296D0 /* InfoPlist.strings */ = {

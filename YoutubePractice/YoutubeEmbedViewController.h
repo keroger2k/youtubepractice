@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  YoutubeEmbedViewController.h
 //  YoutubePractice
 //
 //  Created by Kyle Rogers on 10/3/13.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface YoutubeEmbedViewController : UIViewController
+
+@property (nonatomic, strong) NSURL *url;
 
 @end
