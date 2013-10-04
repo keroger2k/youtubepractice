@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5EDBED0E-1F2F-4C84-9DC2-EA562972E210</string>
+	<key>IDESourceControlProjectName</key>
+	<string>YoutubePractice</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2B64F71D-A54F-4B5C-84EF-A53E6D5333B1</key>
+		<string>https://github.com/keroger2k/youtubepractice.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>YoutubePractice.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2B64F71D-A54F-4B5C-84EF-A53E6D5333B1</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/keroger2k/youtubepractice.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2B64F71D-A54F-4B5C-84EF-A53E6D5333B1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2B64F71D-A54F-4B5C-84EF-A53E6D5333B1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>YoutubePractice</string>
+		</dict>
+	</array>
+</dict>
+</plist>

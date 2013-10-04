@@ -38,9 +38,15 @@
     }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [NSString stringWithFormat:@"VIDEOS・%d", [self.videos count]];
+}
+
 - (void)viewDidLoad
 {
-    NSArray *videos = [YoutubeFetcher searchWithQuery:@""];
+    self.view.bounds = CGRectInset(self.view.frame, 10.0f, 10.0f);
+    NSArray *videos = [YoutubeFetcher searchWithQuery:self.query];
     for (int i = 0; i < [videos count]; i++) {
         Video *video = [[Video alloc] initWithDictionary:videos[i]];
         [self.videos addObject:video];

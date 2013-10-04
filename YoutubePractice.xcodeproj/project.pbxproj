@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2741459C17FF5AF400F6E81A /* FixedSearchTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2741459B17FF5AF400F6E81A /* FixedSearchTVC.m */; };
 		27C3A28917FDF06E000296D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28817FDF06E000296D0 /* Foundation.framework */; };
 		27C3A28B17FDF06E000296D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28A17FDF06E000296D0 /* CoreGraphics.framework */; };
 		27C3A28D17FDF06E000296D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28C17FDF06E000296D0 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2741459A17FF5AF400F6E81A /* FixedSearchTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixedSearchTVC.h; sourceTree = "<group>"; };
+		2741459B17FF5AF400F6E81A /* FixedSearchTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixedSearchTVC.m; sourceTree = "<group>"; };
 		27C3A28517FDF06E000296D0 /* YoutubePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C3A28817FDF06E000296D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27C3A28A17FDF06E000296D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -132,6 +135,8 @@
 				27C3A28F17FDF06E000296D0 /* Supporting Files */,
 				27C3A2C317FDF891000296D0 /* YoutubeVideosTVC.h */,
 				27C3A2C417FDF891000296D0 /* YoutubeVideosTVC.m */,
+				2741459A17FF5AF400F6E81A /* FixedSearchTVC.h */,
+				2741459B17FF5AF400F6E81A /* FixedSearchTVC.m */,
 			);
 			path = YoutubePractice;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				27C3A2C917FE5A71000296D0 /* YoutubeFetcher.m in Sources */,
 				27C3A29517FDF06E000296D0 /* main.m in Sources */,
 				27C3A2C217FDF62D000296D0 /* NoahDancingViewController.m in Sources */,
+				2741459C17FF5AF400F6E81A /* FixedSearchTVC.m in Sources */,
 				27C3A2CD17FE5F3B000296D0 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +496,7 @@
 				27C3A2B917FDF06E000296D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27C3A2BA17FDF06E000296D0 /* Build configuration list for PBXNativeTarget "YoutubePracticeTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +505,7 @@
 				27C3A2BC17FDF06E000296D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

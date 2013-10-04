@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wUf-pm-zVj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A598" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wUf-pm-zVj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
@@ -31,7 +31,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyc-EP-K8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1388" y="-158"/>
+            <point key="canvasLocation" x="1732" y="-152"/>
         </scene>
         <!--Youtube VideosTVC - Videos-->
         <scene sceneID="XzR-hQ-WSh">
@@ -79,7 +79,48 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYr-Wm-chD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="-158"/>
+            <point key="canvasLocation" x="1298" y="-152"/>
+        </scene>
+        <!--Fixed SearchTVC - Searches-->
+        <scene sceneID="o6s-Qh-tkf">
+            <objects>
+                <tableViewController id="Nsg-Y9-m7I" customClass="FixedSearchTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sYg-6P-GAx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Search Query" textLabel="BfU-ol-CK2" style="IBUITableViewCellStyleDefault" id="5Sz-CI-wix">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Sz-CI-wix" id="gf4-KE-d5q">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BfU-ol-CK2">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="oma-X2-apr" kind="push" identifier="Show Search Results" id="4NR-ET-E5p"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Nsg-Y9-m7I" id="Gtb-eI-81s"/>
+                            <outlet property="delegate" destination="Nsg-Y9-m7I" id="kUM-zH-qSp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Searches" id="zHX-J2-NXb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ieh-Rd-VKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863" y="-152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Oxy-XZ-6dz">
@@ -92,12 +133,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="oma-X2-apr" kind="relationship" relationship="rootViewController" id="7YQ-Qu-nUy"/>
+                        <segue destination="Nsg-Y9-m7I" kind="relationship" relationship="rootViewController" id="UnE-X7-SOm"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGt-ph-Paa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="-158"/>
+            <point key="canvasLocation" x="424" y="-152"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

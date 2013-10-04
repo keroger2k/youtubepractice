@@ -10,4 +10,6 @@
 
 @interface YoutubeVideosTVC : UITableViewController
 
+@property (nonatomic, strong) NSString *query;
+
 @end

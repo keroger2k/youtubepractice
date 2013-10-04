@@ -13,7 +13,7 @@
 
 + (NSArray *)searchWithQuery:(NSString *)string
 {
-    NSString *query = [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?part=snippet&q=crossfit&type=video&order=viewCount&maxResults=20&key=%@", YoutubeAPIKey];
+    NSString *query = [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?part=snippet&q=%@&type=video&order=viewCount&maxResults=20&key=%@", string, YoutubeAPIKey];
     query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
