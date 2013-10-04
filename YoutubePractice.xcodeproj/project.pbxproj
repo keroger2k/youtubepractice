@@ -22,6 +22,8 @@
 		27C3A2BF17FDF0C4000296D0 /* YoutubeEmbedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A2BE17FDF0C4000296D0 /* YoutubeEmbedViewController.m */; };
 		27C3A2C217FDF62D000296D0 /* NoahDancingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A2C117FDF62D000296D0 /* NoahDancingViewController.m */; };
 		27C3A2C517FDF891000296D0 /* YoutubeVideosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A2C417FDF891000296D0 /* YoutubeVideosTVC.m */; };
+		27C3A2C917FE5A71000296D0 /* YoutubeFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A2C817FE5A71000296D0 /* YoutubeFetcher.m */; };
+		27C3A2CD17FE5F3B000296D0 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A2CC17FE5F3B000296D0 /* Video.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,11 @@
 		27C3A2C117FDF62D000296D0 /* NoahDancingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoahDancingViewController.m; sourceTree = "<group>"; };
 		27C3A2C317FDF891000296D0 /* YoutubeVideosTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeVideosTVC.h; sourceTree = "<group>"; };
 		27C3A2C417FDF891000296D0 /* YoutubeVideosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeVideosTVC.m; sourceTree = "<group>"; };
+		27C3A2C717FE5A71000296D0 /* YoutubeFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YoutubeFetcher.h; path = Youtube/YoutubeFetcher.h; sourceTree = "<group>"; };
+		27C3A2C817FE5A71000296D0 /* YoutubeFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YoutubeFetcher.m; path = Youtube/YoutubeFetcher.m; sourceTree = "<group>"; };
+		27C3A2CA17FE5ADE000296D0 /* YoutubeAPIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YoutubeAPIKey.h; sourceTree = "<group>"; };
+		27C3A2CB17FE5F3B000296D0 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Video.h; path = Youtube/Video.h; sourceTree = "<group>"; };
+		27C3A2CC17FE5F3B000296D0 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Video.m; path = Youtube/Video.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +123,7 @@
 		27C3A28E17FDF06E000296D0 /* YoutubePractice */ = {
 			isa = PBXGroup;
 			children = (
+				27C3A2C617FE5A39000296D0 /* Youtube */,
 				27C3A29A17FDF06E000296D0 /* iPhone.storyboard */,
 				27C3A2C017FDF62D000296D0 /* NoahDancingViewController.h */,
 				27C3A2C117FDF62D000296D0 /* NoahDancingViewController.m */,
@@ -157,6 +165,18 @@
 				27C3A2B017FDF06E000296D0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27C3A2C617FE5A39000296D0 /* Youtube */ = {
+			isa = PBXGroup;
+			children = (
+				27C3A2C717FE5A71000296D0 /* YoutubeFetcher.h */,
+				27C3A2C817FE5A71000296D0 /* YoutubeFetcher.m */,
+				27C3A2CA17FE5ADE000296D0 /* YoutubeAPIKey.h */,
+				27C3A2CB17FE5F3B000296D0 /* Video.h */,
+				27C3A2CC17FE5F3B000296D0 /* Video.m */,
+			);
+			name = Youtube;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +278,10 @@
 				27C3A2BF17FDF0C4000296D0 /* YoutubeEmbedViewController.m in Sources */,
 				27C3A29917FDF06E000296D0 /* AppDelegate.m in Sources */,
 				27C3A2C517FDF891000296D0 /* YoutubeVideosTVC.m in Sources */,
+				27C3A2C917FE5A71000296D0 /* YoutubeFetcher.m in Sources */,
 				27C3A29517FDF06E000296D0 /* main.m in Sources */,
 				27C3A2C217FDF62D000296D0 /* NoahDancingViewController.m in Sources */,
+				27C3A2CD17FE5F3B000296D0 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

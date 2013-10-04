@@ -7,9 +7,11 @@
 //
 
 #import "YoutubeVideosTVC.h"
+#import "YoutubeFetcher.h"
+#import "Video.h"
 
 @interface YoutubeVideosTVC () <UITableViewDataSource>
-@property (nonatomic, strong) NSMutableArray *videos; //NSUrls
+@property (nonatomic, strong) NSMutableArray *videos; //Videos
 @end
 
 @implementation YoutubeVideosTVC
@@ -27,9 +29,9 @@
         if (indexPath) {
             if ([segue.identifier isEqualToString:@"Show Video"]) {
                 if ([segue.destinationViewController respondsToSelector:@selector(setUrl:)]) {
-                    NSURL *url = [self.videos objectAtIndex:indexPath.item];
-                    [segue.destinationViewController performSelector:@selector(setUrl:) withObject:url];
-                    [segue.destinationViewController setTitle:[url absoluteString]];
+                    Video *video = [self.videos objectAtIndex:indexPath.item];
+                    [segue.destinationViewController performSelector:@selector(setUrl:) withObject:[NSURL URLWithString:[NSString stringWithFormat:@"http://youtu.be/%@", video.videoId]]];
+                    [segue.destinationViewController setTitle:video.title];
                 }
             }
         }
@@ -38,10 +40,11 @@
 
 - (void)viewDidLoad
 {
-    [self.videos addObject:[NSURL URLWithString:@"http://youtu.be/DcdIHec8M1A"]];
-    [self.videos addObject:[NSURL URLWithString:@"http://youtu.be/yIEU4_p2t9s"]];
-    [self.videos addObject:[NSURL URLWithString:@"http://youtu.be/49FlB25vCvw"]];
-    [self.videos addObject:[NSURL URLWithString:@"http://youtu.be/vKA3eOSyaaA"]];
+    NSArray *videos = [YoutubeFetcher searchWithQuery:@""];
+    for (int i = 0; i < [videos count]; i++) {
+        Video *video = [[Video alloc] initWithDictionary:videos[i]];
+        [self.videos addObject:video];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -54,10 +57,9 @@
     static NSString *CellIdentifier = @"Youtube Video";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    NSURL *url = [self.videos objectAtIndex:indexPath.item];
+    Video *video = [self.videos objectAtIndex:indexPath.item];
     
-    cell.textLabel.text = [url absoluteString];
-    
+    cell.textLabel.text = video.title;
     return cell;
 }
 
