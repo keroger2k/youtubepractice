@@ -31,7 +31,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyc-EP-K8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="-152"/>
+            <point key="canvasLocation" x="1086" y="-576"/>
         </scene>
         <!--Youtube VideosTVC - Videos-->
         <scene sceneID="XzR-hQ-WSh">
@@ -79,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYr-Wm-chD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298" y="-152"/>
+            <point key="canvasLocation" x="652" y="-576"/>
         </scene>
         <!--Fixed SearchTVC - Searches-->
         <scene sceneID="o6s-Qh-tkf">
@@ -120,7 +120,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ieh-Rd-VKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="-152"/>
+            <point key="canvasLocation" x="217" y="-576"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Oxy-XZ-6dz">
@@ -138,7 +138,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGt-ph-Paa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="424" y="-152"/>
+            <point key="canvasLocation" x="-222" y="-576"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
