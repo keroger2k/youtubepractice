@@ -60,6 +60,7 @@
     Video *video = [self.videos objectAtIndex:indexPath.item];
     
     cell.textLabel.text = video.title;
+    cell.detailTextLabel.text = video.description;
     return cell;
 }
 

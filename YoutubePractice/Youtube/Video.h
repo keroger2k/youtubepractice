@@ -13,6 +13,7 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
 @property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) NSString *description;
 @property (nonatomic, readonly) NSString *videoId;
 @property (nonatomic, readonly) NSURL *thumbnail;
 

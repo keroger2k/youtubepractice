@@ -12,6 +12,7 @@
 #define YOUTUBE_ID_VIDEO_ID @"videoId"
 #define YOUTUBE_SNIPPET @"snippet"
 #define YOUTUBE_SNIPPET_TITLE @"title"
+#define YOUTUBE_SNIPPET_DESCRIPTION @"description"
 
 @implementation Video
 
@@ -24,6 +25,7 @@
             NSDictionary *snippet = [dictionary valueForKeyPath:YOUTUBE_SNIPPET];
             NSDictionary *id = [dictionary valueForKeyPath:YOUTUBE_ID];
             _title = snippet[YOUTUBE_SNIPPET_TITLE];
+            _description = snippet[YOUTUBE_SNIPPET_DESCRIPTION];
             _videoId = id[YOUTUBE_ID_VIDEO_ID];
         }
         return self;
