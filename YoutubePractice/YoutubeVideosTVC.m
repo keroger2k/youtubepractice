@@ -8,6 +8,7 @@
 
 #import "YoutubeVideosTVC.h"
 #import "YoutubeFetcher.h"
+#import "YoutubeEmbedViewController.h"
 #import "Video.h"
 
 @interface YoutubeVideosTVC () <UITableViewDataSource>
@@ -28,11 +29,10 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         if (indexPath) {
             if ([segue.identifier isEqualToString:@"Show Video"]) {
-                if ([segue.destinationViewController respondsToSelector:@selector(setUrl:)]) {
-                    Video *video = [self.videos objectAtIndex:indexPath.item];
-                    [segue.destinationViewController performSelector:@selector(setUrl:) withObject:[NSURL URLWithString:[NSString stringWithFormat:@"http://youtu.be/%@", video.videoId]]];
-                    [segue.destinationViewController setTitle:video.title];
-                }
+                Video *video = [self.videos objectAtIndex:indexPath.item];
+                YoutubeEmbedViewController *vc = segue.destinationViewController;
+                vc.url = [NSURL URLWithString:[NSString stringWithFormat:@"http://youtu.be/%@", video.videoId]];
+                vc.title = video.title;
             }
         }
     }
@@ -63,7 +63,6 @@
     cell.detailTextLabel.text = video.description;
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:video.thumbnail]];
     [cell.imageView setImage:image];
-    [cell.imageView setFrame:CGRectMake(0, 0, 30, 30)];
     return cell;
 }
 

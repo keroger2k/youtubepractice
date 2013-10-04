@@ -8,14 +8,10 @@
 
 #import "Video.h"
 
-#define YOUTUBE_ID @"id"
-#define YOUTUBE_ID_VIDEO_ID @"videoId"
-#define YOUTUBE_SNIPPET @"snippet"
-#define YOUTUBE_SNIPPET_TITLE @"title"
-#define YOUTUBE_SNIPPET_DESCRIPTION @"description"
-#define YOUTUBE_SNIPPET_THUMBNAIL @"thumbnails"
-#define YOUTUBE_SNIPPET_THUMBNAIL_DEFAULT @"default"
-#define YOUTUBE_SNIPPET_THUMBNAIL_DEFAULT_URL @"url"
+#define YOUTUBE_VIDEO_ID @"id.videoId"
+#define YOUTUBE_TITLE @"snippet.title"
+#define YOUTUBE_DESCRIPTION @"snippet.description"
+#define YOUTUBE_THUMBNAIL @"snippet.thumbnails.default.url"
 
 @implementation Video
 
@@ -25,12 +21,10 @@
     if (self)
     {
         if ([dictionary isKindOfClass:[ NSDictionary class]]) {
-            NSDictionary *snippet = [dictionary valueForKeyPath:YOUTUBE_SNIPPET];
-            NSDictionary *id = [dictionary valueForKeyPath:YOUTUBE_ID];
-            _thumbnail =  [NSURL URLWithString:[[snippet valueForKeyPath:YOUTUBE_SNIPPET_THUMBNAIL] valueForKeyPath:YOUTUBE_SNIPPET_THUMBNAIL_DEFAULT][YOUTUBE_SNIPPET_THUMBNAIL_DEFAULT_URL]];
-            _title = snippet[YOUTUBE_SNIPPET_TITLE];
-            _description = snippet[YOUTUBE_SNIPPET_DESCRIPTION];
-            _videoId = id[YOUTUBE_ID_VIDEO_ID];
+            _thumbnail =  [NSURL URLWithString:[dictionary valueForKeyPath:YOUTUBE_THUMBNAIL]];
+            _title = [dictionary valueForKeyPath:YOUTUBE_TITLE];
+            _description = [dictionary valueForKeyPath:YOUTUBE_DESCRIPTION];
+            _videoId = [dictionary valueForKeyPath:YOUTUBE_VIDEO_ID];
         }
         return self;
     }
