@@ -116,7 +116,12 @@
                             <outlet property="delegate" destination="Nsg-Y9-m7I" id="kUM-zH-qSp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Searches" id="zHX-J2-NXb"/>
+                    <navigationItem key="navigationItem" title="Searches" id="zHX-J2-NXb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TQB-uf-B9L"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="TQB-uf-B9L" id="qsF-ko-57Z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ieh-Rd-VKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

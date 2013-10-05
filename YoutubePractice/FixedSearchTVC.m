@@ -12,6 +12,7 @@
 @interface FixedSearchTVC () <UITableViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray *searches;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 @end
 
@@ -48,14 +49,6 @@
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem:)];
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    self.navigationItem.rightBarButtonItem = addButton;
-}
-
-- (void)addItem:sender
-{
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
