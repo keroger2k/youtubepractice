@@ -16,13 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGs-nh-51j">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGs-nh-51j">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QGs-nh-51j" secondAttribute="bottom" id="0Ry-jv-qtY"/>
+                            <constraint firstItem="QGs-nh-51j" firstAttribute="top" secondItem="YZL-gF-HTm" secondAttribute="top" id="1fn-Lm-Cj0"/>
+                            <constraint firstItem="QGs-nh-51j" firstAttribute="leading" secondItem="YZL-gF-HTm" secondAttribute="leading" id="tTQ-Pe-IPz"/>
+                            <constraint firstAttribute="trailing" secondItem="QGs-nh-51j" secondAttribute="trailing" id="vOq-8O-VJi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bSQ-DG-gJM"/>
                     <connections>
