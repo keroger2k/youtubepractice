@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="hbs-dy-WTa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YZL-gF-HTm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGs-nh-51j">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -44,7 +44,7 @@
             <objects>
                 <tableViewController id="oma-X2-apr" customClass="YoutubeVideosTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3o6-gP-cQl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -96,11 +96,11 @@
                         <viewControllerLayoutGuide type="bottom" id="NkZ-6w-ibh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="35S-WP-LFc" customClass="NewCategoryView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yB1-W8-onm" customClass="ImageCollectionView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="0.0" id="Nno-6D-mo7">
@@ -135,12 +135,8 @@
                                     <outlet property="delegate" destination="2Qd-9c-e6s" id="TxH-yj-Vzd"/>
                                 </connections>
                             </collectionView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tW6-OE-69j">
-                                <rect key="frame" x="142" y="115" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5g-g6-7P3">
-                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" id="qxT-mn-Tbv">
@@ -177,13 +173,16 @@
                                     <outlet property="delegate" destination="2Qd-9c-e6s" id="vch-wL-oVY"/>
                                 </connections>
                             </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tW6-OE-69j">
+                                <rect key="frame" x="150" y="310" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.93725496529999996" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="NkZ-6w-ibh" firstAttribute="top" secondItem="S5g-g6-7P3" secondAttribute="bottom" constant="20" symbolic="YES" id="CZq-mX-PUe"/>
                             <constraint firstAttribute="trailing" secondItem="yB1-W8-onm" secondAttribute="trailing" id="E6s-Mi-NRk"/>
                             <constraint firstItem="S5g-g6-7P3" firstAttribute="leading" secondItem="35S-WP-LFc" secondAttribute="leading" constant="20" symbolic="YES" id="GpC-KZ-41m"/>
-                            <constraint firstItem="tW6-OE-69j" firstAttribute="top" secondItem="35S-WP-LFc" secondAttribute="top" id="JCV-hi-i8g"/>
                             <constraint firstItem="lNb-il-hYx" firstAttribute="trailing" secondItem="ojW-B7-OJJ" secondAttribute="trailing" id="KZc-6M-diY"/>
                             <constraint firstItem="lNb-il-hYx" firstAttribute="top" secondItem="BOG-iq-AVb" secondAttribute="bottom" id="WZW-Ld-nUr"/>
                             <constraint firstItem="ojW-B7-OJJ" firstAttribute="leading" secondItem="35S-WP-LFc" secondAttribute="leading" id="byb-iZ-TTN"/>
@@ -216,7 +215,7 @@
             <objects>
                 <tableViewController id="Nsg-Y9-m7I" customClass="FixedSearchTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sYg-6P-GAx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -283,6 +282,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>
