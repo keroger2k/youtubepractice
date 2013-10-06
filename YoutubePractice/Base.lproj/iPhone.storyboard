@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="hbs-dy-WTa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YZL-gF-HTm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGs-nh-51j">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -44,7 +44,7 @@
             <objects>
                 <tableViewController id="oma-X2-apr" customClass="YoutubeVideosTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3o6-gP-cQl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -96,58 +96,35 @@
                         <viewControllerLayoutGuide type="bottom" id="NkZ-6w-ibh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="35S-WP-LFc" customClass="NewCategoryView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4lf-Jr-Rbi">
-                                <rect key="frame" x="20" y="518" width="226" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2k-cY-IeP">
-                                <rect key="frame" x="259" y="517" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addingCategoryEvent:" destination="2Qd-9c-e6s" eventType="touchUpInside" id="X53-pZ-PnD"/>
-                                </connections>
-                            </button>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for image" translatesAutoresizingMaskIntoConstraints="NO" id="ojW-B7-OJJ">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="2Qd-9c-e6s" id="vch-wL-oVY"/>
-                                </connections>
-                            </searchBar>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yB1-W8-onm" customClass="ImageCollectionView">
-                                <rect key="frame" x="0.0" y="110" width="320" height="390"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yB1-W8-onm" customClass="ImageCollectionView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Nno-6D-mo7">
-                                    <size key="itemSize" width="160" height="160"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="0.0" id="Nno-6D-mo7">
+                                    <size key="itemSize" width="154" height="154"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="4" minY="48" maxX="4" maxY="48"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cellPhotoIdentifier" reuseIdentifier="cellPhotoIdentifier" id="gTJ-OG-bj2" customClass="ImageViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                        <rect key="frame" x="4" y="112" width="154" height="154"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="154" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7i6-b5-JZz">
-                                                    <rect key="frame" x="-40" y="-40" width="240" height="240"/>
+                                                    <rect key="frame" x="-37" y="-37" width="230" height="230"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="cellImage" destination="7i6-b5-JZz" id="bER-ns-yjr"/>
                                         </connections>
@@ -158,12 +135,68 @@
                                     <outlet property="delegate" destination="2Qd-9c-e6s" id="TxH-yj-Vzd"/>
                                 </connections>
                             </collectionView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tW6-OE-69j">
-                                <rect key="frame" x="141.5" y="214" width="20" height="20"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tW6-OE-69j">
+                                <rect key="frame" x="142" y="115" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5g-g6-7P3">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" id="qxT-mn-Tbv">
+                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Name" minimumFontSize="17" id="4lf-Jr-Rbi">
+                                            <rect key="frame" x="16" y="7" width="226" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="M8W-WG-vPO">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="M2k-cY-IeP">
+                                            <rect key="frame" x="252" y="7" width="66" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Add">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="addingCategoryEvent:" destination="2Qd-9c-e6s" eventType="touchUpInside" id="X53-pZ-PnD"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNb-il-hYx">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for image" translatesAutoresizingMaskIntoConstraints="NO" id="ojW-B7-OJJ">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2Qd-9c-e6s" id="vch-wL-oVY"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.93725496529999996" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="NkZ-6w-ibh" firstAttribute="top" secondItem="S5g-g6-7P3" secondAttribute="bottom" constant="20" symbolic="YES" id="CZq-mX-PUe"/>
+                            <constraint firstAttribute="trailing" secondItem="yB1-W8-onm" secondAttribute="trailing" id="E6s-Mi-NRk"/>
+                            <constraint firstItem="S5g-g6-7P3" firstAttribute="leading" secondItem="35S-WP-LFc" secondAttribute="leading" constant="20" symbolic="YES" id="GpC-KZ-41m"/>
+                            <constraint firstItem="tW6-OE-69j" firstAttribute="top" secondItem="35S-WP-LFc" secondAttribute="top" id="JCV-hi-i8g"/>
+                            <constraint firstItem="lNb-il-hYx" firstAttribute="trailing" secondItem="ojW-B7-OJJ" secondAttribute="trailing" id="KZc-6M-diY"/>
+                            <constraint firstItem="lNb-il-hYx" firstAttribute="top" secondItem="BOG-iq-AVb" secondAttribute="bottom" id="WZW-Ld-nUr"/>
+                            <constraint firstItem="ojW-B7-OJJ" firstAttribute="leading" secondItem="35S-WP-LFc" secondAttribute="leading" id="byb-iZ-TTN"/>
+                            <constraint firstItem="yB1-W8-onm" firstAttribute="top" secondItem="35S-WP-LFc" secondAttribute="top" id="cJK-6P-pul"/>
+                            <constraint firstItem="yB1-W8-onm" firstAttribute="leading" secondItem="ojW-B7-OJJ" secondAttribute="leading" id="ieh-kk-Bwe"/>
+                            <constraint firstItem="S5g-g6-7P3" firstAttribute="bottom" secondItem="yB1-W8-onm" secondAttribute="bottom" id="lVE-M3-MIF"/>
+                            <constraint firstAttribute="bottom" secondItem="yB1-W8-onm" secondAttribute="bottom" id="m23-A4-LUi"/>
+                            <constraint firstItem="yB1-W8-onm" firstAttribute="trailing" secondItem="S5g-g6-7P3" secondAttribute="trailing" id="ocz-qh-upM"/>
+                            <constraint firstItem="S5g-g6-7P3" firstAttribute="trailing" secondItem="lNb-il-hYx" secondAttribute="trailing" id="pJf-Bc-gyv"/>
+                            <constraint firstItem="ojW-B7-OJJ" firstAttribute="top" secondItem="BOG-iq-AVb" secondAttribute="bottom" id="t73-JL-pmb"/>
+                            <constraint firstItem="lNb-il-hYx" firstAttribute="leading" secondItem="S5g-g6-7P3" secondAttribute="leading" id="tU4-HQ-umW"/>
+                            <constraint firstAttribute="trailing" secondItem="S5g-g6-7P3" secondAttribute="trailing" constant="20" symbolic="YES" id="u5j-uk-vcQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Category" id="Rin-8b-lgS"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -183,7 +216,7 @@
             <objects>
                 <tableViewController id="Nsg-Y9-m7I" customClass="FixedSearchTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sYg-6P-GAx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -250,6 +283,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
