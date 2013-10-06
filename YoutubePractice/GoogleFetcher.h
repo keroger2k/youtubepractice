@@ -11,4 +11,5 @@
 @interface GoogleFetcher : NSObject
 + (NSArray *)searchImagesWithQuery:(NSString *)query;
 + (NSArray *)searchVideosWithQuery:(NSString *)query;
++ (NSArray *)fetchVideoStatistics:(NSArray *)videoIds;
 @end

@@ -10,11 +10,12 @@
 
 @interface Video : NSObject
 
-- (id)initWithDictionary:(NSDictionary *)dictionary;
+- (id)initWithSnippet:(NSDictionary *)snippet andStatistics:(NSDictionary *)statistics;
 
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSString *description;
 @property (nonatomic, readonly) NSString *videoId;
 @property (nonatomic, readonly) NSURL *thumbnail;
+@property (nonatomic, readonly) NSUInteger viewCount;
 
 @end
