@@ -23,6 +23,7 @@
 		27C3A2BF17FDF0C4000296D0 /* YoutubeEmbedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A2BE17FDF0C4000296D0 /* YoutubeEmbedViewController.m */; };
 		27C3A2C517FDF891000296D0 /* YoutubeVideosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C3A2C417FDF891000296D0 /* YoutubeVideosTVC.m */; };
 		27F42C1E1801F17B00D10798 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F42C1D1801F17B00D10798 /* Video.m */; };
+		27F42C20180213D200D10798 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F42C1F180213D200D10798 /* Default-568h@2x.png */; };
 		5A1F8E051800DCF600EC4A79 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F8E041800DCF600EC4A79 /* CategoryViewController.m */; };
 		5A1F8E081800E21200EC4A79 /* ImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F8E071800E21200EC4A79 /* ImageViewCell.m */; };
 		5A1F8E0D1800FFFE00EC4A79 /* GoogleFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F8E0C1800FFFE00EC4A79 /* GoogleFetcher.m */; };
@@ -64,13 +65,13 @@
 		27C3A2CA17FE5ADE000296D0 /* YoutubeAPIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YoutubeAPIKey.h; sourceTree = "<group>"; };
 		27F42C1C1801F17B00D10798 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
 		27F42C1D1801F17B00D10798 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
+		27F42C1F180213D200D10798 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5A1F8E031800DCF600EC4A79 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		5A1F8E041800DCF600EC4A79 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		5A1F8E061800E21200EC4A79 /* ImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewCell.h; sourceTree = "<group>"; };
 		5A1F8E071800E21200EC4A79 /* ImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewCell.m; sourceTree = "<group>"; };
 		5A1F8E0B1800FFFE00EC4A79 /* GoogleFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleFetcher.h; sourceTree = "<group>"; };
 		5A1F8E0C1800FFFE00EC4A79 /* GoogleFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleFetcher.m; sourceTree = "<group>"; };
-		5A1F8E0E180115D600EC4A79 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +101,7 @@
 		27C3A27C17FDF06E000296D0 = {
 			isa = PBXGroup;
 			children = (
-				5A1F8E0E180115D600EC4A79 /* Default-568h@2x.png */,
+				27F42C1F180213D200D10798 /* Default-568h@2x.png */,
 				27C3A28E17FDF06E000296D0 /* YoutubePractice */,
 				27C3A2AD17FDF06E000296D0 /* YoutubePracticeTests */,
 				27C3A28717FDF06E000296D0 /* Frameworks */,
@@ -261,6 +262,7 @@
 			files = (
 				27C3A29317FDF06E000296D0 /* InfoPlist.strings in Resources */,
 				27C3A29C17FDF06E000296D0 /* iPhone.storyboard in Resources */,
+				27F42C20180213D200D10798 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
