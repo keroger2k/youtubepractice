@@ -20,6 +20,12 @@
 
 @implementation CategoryViewController
 
+- (NSArray *)googleImageCollection
+{
+    if(!_googleImageCollection) _googleImageCollection = [[NSArray alloc] init];
+    return _googleImageCollection;
+}
+
 - (IBAction)searchEvent
 {
     [self.view endEditing:YES];
@@ -30,8 +36,6 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [self.view endEditing:YES];
-    
-
     [self.spinner startAnimating];
     dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [self loadData];
@@ -39,8 +43,7 @@
             [self.imageViewCollection reloadData];
             [self.spinner stopAnimating];
         });
-    });
-    
+    });    
 }
 
 -(void)loadData
@@ -51,10 +54,17 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section
 {
-    if(!self.googleImageCollection)
-        return 0;
-    
     return [self.googleImageCollection count];
+}
+
+- (IBAction)imageSelected:(UITapGestureRecognizer *)gesture
+{
+    CGPoint tapLocation = [gesture locationInView:self.imageViewCollection];
+    NSIndexPath *indexPath = [self.imageViewCollection indexPathForItemAtPoint:tapLocation];
+    if(indexPath) {
+        
+        NSLog(@"%@", self.googleImageCollection[indexPath.item]);
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -64,6 +74,7 @@
     [collectionView dequeueReusableCellWithReuseIdentifier:@"cellPhotoIdentifier"
                                               forIndexPath:indexPath];
     NSObject *obj = [self.googleImageCollection objectAtIndex:indexPath.item];
+    NSLog(@"%@", obj);
     [cell setVideoImageUrl: [NSString stringWithFormat:@"%@", obj]];
     return cell;
 }

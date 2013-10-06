@@ -10,7 +10,6 @@
 
 @interface ImageViewCell()
 @property (nonatomic, weak) IBOutlet UIImageView *cellImage;
-
 @end
 
 @implementation ImageViewCell

@@ -45,12 +45,16 @@
 
 - (void)viewDidLoad
 {
-    self.view.bounds = CGRectInset(self.view.frame, 10.0f, 10.0f);
-    NSArray *videos = [GoogleFetcher searchVideosWithQuery:self.query];
-    for (int i = 0; i < [videos count]; i++) {
-        Video *video = [[Video alloc] initWithDictionary:videos[i]];
-        [self.videos addObject:video];
-    }
+    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSArray *videos = [GoogleFetcher searchVideosWithQuery:self.query];
+        dispatch_async( dispatch_get_main_queue(), ^{
+            for (int i = 0; i < [videos count]; i++) {
+                Video *video = [[Video alloc] initWithDictionary:videos[i]];
+                [self.videos addObject:video];
+            }
+            [self.tableView reloadData];
+        });
+    });
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
