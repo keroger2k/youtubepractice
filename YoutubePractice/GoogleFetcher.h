@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GoogleImageFetcher : NSObject
-+(NSArray *)searchWithQuery:(NSString *)queryString;
+@interface GoogleFetcher : NSObject
++ (NSArray *)searchImagesWithQuery:(NSString *)query;
++ (NSArray *)searchVideosWithQuery:(NSString *)query;
 @end

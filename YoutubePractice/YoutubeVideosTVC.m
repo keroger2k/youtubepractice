@@ -7,8 +7,8 @@
 //
 
 #import "YoutubeVideosTVC.h"
-#import "YoutubeFetcher.h"
 #import "YoutubeEmbedViewController.h"
+#import "GoogleFetcher.h"
 #import "Video.h"
 
 @interface YoutubeVideosTVC () <UITableViewDataSource>
@@ -46,7 +46,7 @@
 - (void)viewDidLoad
 {
     self.view.bounds = CGRectInset(self.view.frame, 10.0f, 10.0f);
-    NSArray *videos = [YoutubeFetcher searchWithQuery:self.query];
+    NSArray *videos = [GoogleFetcher searchVideosWithQuery:self.query];
     for (int i = 0; i < [videos count]; i++) {
         Video *video = [[Video alloc] initWithDictionary:videos[i]];
         [self.videos addObject:video];

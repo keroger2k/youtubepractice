@@ -10,5 +10,5 @@
 
 @interface ImageCollectionView : UICollectionView 
 
--(void)setImage:(NSString *)imageUrl;
+
 @end

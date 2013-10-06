@@ -8,7 +8,7 @@
 
 #import "CategoryViewController.h"
 #import "ImageViewCell.h"
-#import "GoogleImageFetcher.h"
+#import "GoogleFetcher.h"
 
 @interface CategoryViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *categoryInput;
@@ -16,19 +16,9 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *imageViewCollection;
 @property (strong, nonatomic) NSArray *googleImageCollection;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-
 @end
 
 @implementation CategoryViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (IBAction)searchEvent
 {
@@ -53,28 +43,9 @@
     
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
 -(void)loadData
 {
-    NSString *query = [NSString stringWithFormat:@"https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=%@&imgsz=small&safe=active&rsz=8", self.imageSearchbox.text];
-    
-    self.googleImageCollection = [GoogleImageFetcher searchWithQuery:query];
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1;
+    self.googleImageCollection = [GoogleFetcher searchImagesWithQuery:self.imageSearchbox.text];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
