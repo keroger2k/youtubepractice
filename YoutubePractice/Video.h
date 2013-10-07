@@ -10,7 +10,7 @@
 
 @interface Video : NSObject
 
-- (id)initWithSnippet:(NSDictionary *)snippet andStatistics:(NSDictionary *)statistics;
+- (id)initWithSnippet:(NSDictionary *)dictionary;
 
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSString *description;

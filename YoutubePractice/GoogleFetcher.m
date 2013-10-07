@@ -35,9 +35,29 @@
 {
     NSString *appendedIds = [videoIds componentsJoinedByString:@","];
     NSDictionary *results = [self executeQueryRequest:
-                             [NSString stringWithFormat:@"%@videos?id=%@&part=id,snippet,statistics&key=%@", GOOGLE_API_URL, appendedIds, YoutubeAPIKey]];
+                             [NSString stringWithFormat:@"%@videos?id=%@&part=id,statistics&key=%@", GOOGLE_API_URL, appendedIds, YoutubeAPIKey]];
     return [results valueForKeyPath:@"items"];
 }
+
++ (NSArray *)searchVideosAndStatisticsWithQuery:(NSString *)query
+{
+    NSDictionary *results = [self executeQueryRequest:
+                             [NSString stringWithFormat:@"%@search?part=snippet&q=%@&type=video&safeSearch=strict&order=viewCount&maxResults=%d&key=%@", GOOGLE_API_URL, query, YOUTUBE_MAX_RESULTS, YoutubeAPIKey]];
+    NSMutableArray *videos = [[NSMutableArray alloc]init];
+    NSMutableArray *combined = [[NSMutableArray alloc] init];
+    NSArray *items = [results valueForKeyPath:@"items"];
+    for (int i = 0; i < [items count]; i++) {
+        NSString *videoId = [items[i] valueForKeyPath:@"id.videoId"];
+        [videos addObject:videoId];
+    }
+    NSArray *statistics = [self fetchVideoStatistics:videos];
+    for (int i = 0; i < [items count]; i++) {
+        NSDictionary *d = @{ @"id" : [items[i] valueForKeyPath:@"id"], @"snippet" : [items[i] valueForKeyPath:@"snippet"], @"statistics" : [statistics[i] valueForKeyPath:@"statistics"] };
+        [combined addObject:d];
+    }
+    return combined;
+}
+
 
 + (NSDictionary *)executeQueryRequest:urlString
 {

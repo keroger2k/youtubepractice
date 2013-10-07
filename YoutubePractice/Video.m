@@ -15,19 +15,17 @@
 
 @implementation Video
 
-- (id)initWithSnippet:(NSDictionary *)snippet andStatistics:(NSDictionary *)statistics
+- (id)initWithSnippet:(NSDictionary *)dictionary
 {
     self = [self init];
     if (self)
     {
-        if ([snippet isKindOfClass:[ NSDictionary class]]) {
-            _thumbnail =  [NSURL URLWithString:[snippet valueForKeyPath:YOUTUBE_THUMBNAIL]];
-            _title = [snippet valueForKeyPath:YOUTUBE_TITLE];
-            _description = [snippet valueForKeyPath:YOUTUBE_DESCRIPTION];
-            _videoId = [snippet valueForKeyPath:YOUTUBE_VIDEO_ID];
-        }
-        if ([statistics isKindOfClass:[ NSDictionary class]]) {
-            NSString *s = [[statistics valueForKey:@"statistics"] valueForKey:@"viewCount"];
+        if ([dictionary isKindOfClass:[ NSDictionary class]]) {
+            _thumbnail =  [NSURL URLWithString:[dictionary valueForKeyPath:YOUTUBE_THUMBNAIL]];
+            _title = [dictionary valueForKeyPath:YOUTUBE_TITLE];
+            _description = [dictionary valueForKeyPath:YOUTUBE_DESCRIPTION];
+            _videoId = [dictionary valueForKeyPath:YOUTUBE_VIDEO_ID];
+            NSString *s = [[dictionary valueForKey:@"statistics"] valueForKey:@"viewCount"];
             _viewCount = [s integerValue];
         }
         return self;

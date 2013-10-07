@@ -46,19 +46,12 @@
 - (void)viewDidLoad
 {
     dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray *videos = [GoogleFetcher searchVideosWithQuery:self.query];
+        NSArray *videos = [GoogleFetcher searchVideosAndStatisticsWithQuery:self.query];
+        for (int i = 0; i < [videos count]; i++) {
+            Video *video = [[Video alloc] initWithSnippet:videos[i]];
+            [self.videos addObject:video];
+        }
         dispatch_async( dispatch_get_main_queue(), ^{
-            /*This is horrible.  Having to do 21 total requests.  It can be done in two requests, but the
-              complexity goes up.  Notice I'm sending an array of videoIds even though its just one videoId, it can
-              be more than one.
-             
-              Also, makes the load time much slower, but I want viewCount.
-             */
-            for (int i = 0; i < [videos count]; i++) {
-                NSArray *deleteMe = [GoogleFetcher fetchVideoStatistics:@[[videos[i] valueForKeyPath:@"id.videoId"]]];
-                Video *video = [[Video alloc] initWithSnippet:videos[i] andStatistics:deleteMe[0]];
-                [self.videos addObject:video];
-            }
             [self.tableView reloadData];
         });
     });
@@ -77,7 +70,11 @@
     Video *video = [self.videos objectAtIndex:indexPath.item];
     
     cell.textLabel.text = video.title;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Views: %d, %@", video.viewCount, video.description];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSString* commaString = [numberFormatter stringFromNumber:[NSNumber numberWithInt:video.viewCount]];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Views: %@・%@", commaString, video.description];
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:video.thumbnail]];
     [cell.imageView setImage:image];
     return cell;

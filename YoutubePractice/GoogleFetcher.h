@@ -12,4 +12,5 @@
 + (NSArray *)searchImagesWithQuery:(NSString *)query;
 + (NSArray *)searchVideosWithQuery:(NSString *)query;
 + (NSArray *)fetchVideoStatistics:(NSArray *)videoIds;
++ (NSArray *)searchVideosAndStatisticsWithQuery:(NSString *)query;
 @end
