@@ -25,7 +25,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (!self.managedObjectContext) [self useDemoDocument];
+    if (!self.managedObjectContext) {
+        [self useDemoDocument];
+    } else {
+        [self.managedObjectContext save:nil];
+    }
+    [self.tableView reloadData];
 }
 
 - (void)useDemoDocument
@@ -58,9 +63,14 @@
     _managedObjectContext = managedObjectContext;
     if (managedObjectContext) {
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Search"];
-        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"query" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"query"
+                                                                  ascending:YES
+                                                                   selector:@selector(localizedCaseInsensitiveCompare:)]];
         request.predicate = nil; // all searches
-        self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+        self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                            managedObjectContext:managedObjectContext
+                                                                              sectionNameKeyPath:nil
+                                                                                       cacheName:nil];
     } else {
         self.fetchedResultsController = nil;
     }

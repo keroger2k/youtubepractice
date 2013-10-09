@@ -8,12 +8,27 @@
 
 #import "VideosCDTVC.h"
 #import "YoutubeEmbedViewController.h"
+#import "GoogleFetcher.h"
+#import "Video+Youtube.h"
 
 @interface VideosCDTVC ()
 
 @end
 
 @implementation VideosCDTVC
+- (IBAction)refresh
+{
+    dispatch_queue_t fetchQ = dispatch_queue_create("Flickr Fetch", NULL);
+    dispatch_async(fetchQ, ^{
+        NSArray *photos = [GoogleFetcher searchVideosAndStatisticsWithQuery:self.search.query];
+        // put the photos in Core Data
+        [self.search.managedObjectContext performBlock:^{
+            for (NSDictionary *photo in photos) {
+                [Video videoWithYoutubeInfo:photo forSearch:self.search.query inManagedObjectContext:self.search.managedObjectContext];
+            }
+        }];
+    });
+}
 
 - (void)setupFetchedResultsController
 {
@@ -27,7 +42,7 @@
                                      initWithFetchRequest:reqest
                                      managedObjectContext:self.search.managedObjectContext
                                      sectionNameKeyPath:nil
-                                     cacheName:@"VideosCDTVC"];
+                                     cacheName:nil];
 }
 
 - (void)setSearch:(Search *)search
@@ -35,7 +50,10 @@
     if (_search == search) return;
     _search = search;
     self.title = search.query;
-    [self setupFetchedResultsController];
+    int results = [_search.searchResults count];
+    if (results != 0) {
+        [self setupFetchedResultsController];
+    }
 }
 
 

@@ -30,6 +30,7 @@
         } else if (![matches count]) {
             search = [NSEntityDescription insertNewObjectForEntityForName:@"Search" inManagedObjectContext:context];
             search.query = query;
+            //[context save:nil];
         } else {
             search = [matches lastObject];
         }

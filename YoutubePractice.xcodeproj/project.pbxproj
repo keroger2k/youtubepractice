@@ -27,6 +27,7 @@
 		27F42C7D1804916C00D10798 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F42C7C1804916C00D10798 /* CoreDataTableViewController.m */; };
 		27F42C80180491B500D10798 /* SearchCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F42C7F180491B500D10798 /* SearchCDTVC.m */; };
 		27F42C83180494C900D10798 /* VideosCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F42C82180494C900D10798 /* VideosCDTVC.m */; };
+		27F42C8B1804F7D900D10798 /* AddSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F42C8A1804F7D900D10798 /* AddSearchViewController.m */; };
 		5A1F8E081800E21200EC4A79 /* ImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F8E071800E21200EC4A79 /* ImageViewCell.m */; };
 		5A1F8E0D1800FFFE00EC4A79 /* GoogleFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1F8E0C1800FFFE00EC4A79 /* GoogleFetcher.m */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,8 @@
 		27F42C7F180491B500D10798 /* SearchCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchCDTVC.m; path = ../SearchCDTVC.m; sourceTree = "<group>"; };
 		27F42C81180494C900D10798 /* VideosCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideosCDTVC.h; path = ../VideosCDTVC.h; sourceTree = "<group>"; };
 		27F42C82180494C900D10798 /* VideosCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideosCDTVC.m; path = ../VideosCDTVC.m; sourceTree = "<group>"; };
+		27F42C891804F7D900D10798 /* AddSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSearchViewController.h; sourceTree = "<group>"; };
+		27F42C8A1804F7D900D10798 /* AddSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSearchViewController.m; sourceTree = "<group>"; };
 		5A1F8E061800E21200EC4A79 /* ImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewCell.h; path = ../ImageViewCell.h; sourceTree = "<group>"; };
 		5A1F8E071800E21200EC4A79 /* ImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewCell.m; path = ../ImageViewCell.m; sourceTree = "<group>"; };
 		5A1F8E0B1800FFFE00EC4A79 /* GoogleFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleFetcher.h; path = YoutubePractice/GoogleFetcher.h; sourceTree = SOURCE_ROOT; };
@@ -187,6 +190,8 @@
 				27C3A2BE17FDF0C4000296D0 /* YoutubeEmbedViewController.m */,
 				27F42C7B1804916C00D10798 /* CoreDataTableViewController.h */,
 				27F42C7C1804916C00D10798 /* CoreDataTableViewController.m */,
+				27F42C891804F7D900D10798 /* AddSearchViewController.h */,
+				27F42C8A1804F7D900D10798 /* AddSearchViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				27F42C80180491B500D10798 /* SearchCDTVC.m in Sources */,
 				27C3A29517FDF06E000296D0 /* main.m in Sources */,
 				27F42C2D18033E4500D10798 /* Search.m in Sources */,
+				27F42C8B1804F7D900D10798 /* AddSearchViewController.m in Sources */,
 				27F42C3018033E4600D10798 /* Video.m in Sources */,
 				27F42C3618033FE500D10798 /* Video+Youtube.m in Sources */,
 				5A1F8E0D1800FFFE00EC4A79 /* GoogleFetcher.m in Sources */,
