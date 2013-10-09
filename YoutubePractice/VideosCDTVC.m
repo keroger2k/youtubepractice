@@ -91,7 +91,7 @@
             if ([segue.identifier isEqualToString:@"Show Video"]) {
                 Video *video = [self.fetchedResultsController objectAtIndexPath:indexPath];
                 YoutubeEmbedViewController *vc = segue.destinationViewController;
-                vc.url = [NSURL URLWithString:[NSString stringWithFormat:@"http://youtu.be/%@", video.videoId]];
+                vc.url = [NSURL URLWithString:[NSString stringWithFormat:@"http://youtu.be/%@?rel=0&controls=0", video.videoId]];
                 vc.title = video.title;
             }
         }
