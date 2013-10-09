@@ -10,4 +10,6 @@
 
 @interface AddSearchViewController : UITableViewController
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
 @end

@@ -20,17 +20,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.refreshControl addTarget:self
+                            action:@selector(refresh)
+                  forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (!self.managedObjectContext) {
-        [self useDemoDocument];
-    } else {
-        [self.managedObjectContext save:nil];
-    }
-    [self.tableView reloadData];
+    if (!self.managedObjectContext) [self useDemoDocument];
 }
 
 - (void)useDemoDocument
@@ -45,6 +43,7 @@
           completionHandler:^(BOOL success) {
               if (success) {
                   self.managedObjectContext = document.managedObjectContext;
+                  [self refresh];
               }
           }];
     } else if (document.documentState == UIDocumentStateClosed) {
@@ -76,13 +75,34 @@
     }
 }
 
+- (IBAction)refresh
+{
+    [self.refreshControl beginRefreshing];
+    dispatch_queue_t fetchQ = dispatch_queue_create("SearchQueue", NULL);
+    dispatch_async(fetchQ, ^{
+        [self.managedObjectContext performBlock:^{
+            [self.tableView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.refreshControl endRefreshing];
+            });
+        }];
+    });
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     Search *search = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    if ([segue.destinationViewController respondsToSelector:@selector(setSearch:)]) {
-    	[segue.destinationViewController performSelector:@selector(setSearch:) withObject:search];
+    if ([segue.identifier isEqualToString:@"Show Search Results"]) {
+        if ([segue.destinationViewController respondsToSelector:@selector(setSearch:)]) {
+            [segue.destinationViewController performSelector:@selector(setSearch:) withObject:search];
+        }
+    }
+    if ([segue.identifier isEqualToString:@"Add Search"]) {
+        if ([segue.destinationViewController respondsToSelector:@selector(setManagedObjectContext:)]) {
+            [segue.destinationViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
+        }
     }
 }
 

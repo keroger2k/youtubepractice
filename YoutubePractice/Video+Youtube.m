@@ -53,7 +53,6 @@
     } else { // found the Photo, just return it from the list of matches (which there will only be one of)
         video = [matches lastObject];
     }
-    
     return video;
 }
 

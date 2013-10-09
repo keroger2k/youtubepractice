@@ -50,10 +50,7 @@
     if (_search == search) return;
     _search = search;
     self.title = search.query;
-    int results = [_search.searchResults count];
-    if (results != 0) {
-        [self setupFetchedResultsController];
-    }
+    [self setupFetchedResultsController];
 }
 
 
