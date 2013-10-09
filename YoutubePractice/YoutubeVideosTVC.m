@@ -8,8 +8,9 @@
 
 #import "YoutubeVideosTVC.h"
 #import "YoutubeEmbedViewController.h"
-#import "GoogleFetcher.h"
-#import "Video.h"
+//#import "GoogleFetcher.h"
+#import "Video+Youtube.h"
+#import "Search+Create.h"
 
 @interface YoutubeVideosTVC () <UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *videos; //Videos
@@ -45,16 +46,42 @@
 
 - (void)viewDidLoad
 {
-    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray *videos = [GoogleFetcher searchVideosAndStatisticsWithQuery:self.query];
-        for (int i = 0; i < [videos count]; i++) {
-            Video *video = [[Video alloc] initWithSnippet:videos[i]];
-            [self.videos addObject:video];
+    
+    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    url = [url URLByAppendingPathComponent:@"Demo Document"];
+    UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[url path]]) {
+        [document saveToURL:url
+           forSaveOperation:UIDocumentSaveForCreating
+          completionHandler:^(BOOL success) {
+              if (success) {
+                  [self loadVideosWithContext:document.managedObjectContext];
+              }
+          }];
+    } else if (document.documentState == UIDocumentStateClosed) {
+        [document openWithCompletionHandler:^(BOOL success) {
+            if (success) {
+                [self loadVideosWithContext:document.managedObjectContext];
+            }
+        }];
+    } else {
+        [self loadVideosWithContext:document.managedObjectContext];
+    }
+}
+
+- (void)loadVideosWithContext:(NSManagedObjectContext *)context
+{
+    //NSArray *videos = [GoogleFetcher searchVideosAndStatisticsWithQuery:self.query];
+    [context performBlock:^{
+        Search *search = [Search searchWithString:self.query inManagedObjectContext:context];
+        for (int i = 0; i < [search.searchResults count]; i++) {
+            [self.videos addObject:[search.searchResults allObjects][i]];
         }
-        dispatch_async( dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
-    });
+    }];    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -72,10 +99,10 @@
     cell.textLabel.text = video.title;
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    NSString* commaString = [numberFormatter stringFromNumber:[NSNumber numberWithInt:video.viewCount]];
+    NSString* commaString = [numberFormatter stringFromNumber:video.viewCount];
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Views: %@・%@", commaString, video.description];
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:video.thumbnail]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Views: %@・%@", commaString, video.subtitle];
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:video.thumbUrl]]];
     [cell.imageView setImage:image];
     return cell;
 }

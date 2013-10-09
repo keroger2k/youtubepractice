@@ -112,7 +112,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cellPhotoIdentifier" reuseIdentifier="cellPhotoIdentifier" id="gTJ-OG-bj2" customClass="ImageViewCell">
-                                        <rect key="frame" x="4" y="112" width="154" height="154"/>
+                                        <rect key="frame" x="4" y="48" width="154" height="154"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="154" height="154"/>
@@ -163,11 +163,11 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNb-il-hYx">
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lNb-il-hYx">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for image" translatesAutoresizingMaskIntoConstraints="NO" id="ojW-B7-OJJ">
+                            <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="minimal" placeholder="Search for image" translatesAutoresizingMaskIntoConstraints="NO" id="ojW-B7-OJJ">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
@@ -219,10 +219,10 @@
             </objects>
             <point key="canvasLocation" x="-1960" y="48"/>
         </scene>
-        <!--Fixed SearchTVC - Searches-->
+        <!--SearchCDTVC - Searches-->
         <scene sceneID="o6s-Qh-tkf">
             <objects>
-                <tableViewController id="Nsg-Y9-m7I" customClass="FixedSearchTVC" sceneMemberID="viewController">
+                <tableViewController id="Nsg-Y9-m7I" customClass="SearchCDTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sYg-6P-GAx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,19 +255,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Searches" id="zHX-J2-NXb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TQB-uf-B9L">
-                            <connections>
-                                <segue destination="2Qd-9c-e6s" kind="push" id="Q1r-nA-aVi"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wjg-LM-Cw4"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="addButton" destination="TQB-uf-B9L" id="qsF-ko-57Z"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ieh-Rd-VKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2431" y="-704"/>
+            <point key="canvasLocation" x="-2555" y="-704"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Oxy-XZ-6dz">

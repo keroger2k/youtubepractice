@@ -52,8 +52,12 @@
     }
     NSArray *statistics = [self fetchVideoStatistics:videos];
     for (int i = 0; i < [items count]; i++) {
-        NSDictionary *d = @{ @"id" : [items[i] valueForKeyPath:@"id"], @"snippet" : [items[i] valueForKeyPath:@"snippet"], @"statistics" : [statistics[i] valueForKeyPath:@"statistics"] };
-        [combined addObject:d];
+        NSString *videoId = [items[i] valueForKeyPath:@"id.videoId"];
+        NSString *statisticsVideoId = [statistics[i] valueForKeyPath:@"id"];
+        if ([videoId isEqualToString:statisticsVideoId] ) { //They seem to come back in correct order but verifying.
+            NSDictionary *d = @{ @"id" : [items[i] valueForKeyPath:@"id"], @"snippet" : [items[i] valueForKeyPath:@"snippet"], @"statistics" : [statistics[i] valueForKeyPath:@"statistics"] };
+            [combined addObject:d];
+        }
     }
     return combined;
 }

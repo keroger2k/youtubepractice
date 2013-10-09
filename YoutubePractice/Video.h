@@ -2,20 +2,23 @@
 //  Video.h
 //  YoutubePractice
 //
-//  Created by Kyle Rogers on 10/3/13.
+//  Created by Kyle Rogers on 10/7/13.
 //  Copyright (c) 2013 Kyle Rogers. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Video : NSObject
+@class Search;
 
-- (id)initWithSnippet:(NSDictionary *)dictionary;
+@interface Video : NSManagedObject
 
-@property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) NSString *description;
-@property (nonatomic, readonly) NSString *videoId;
-@property (nonatomic, readonly) NSURL *thumbnail;
-@property (nonatomic, readonly) NSUInteger viewCount;
+@property (nonatomic, retain) NSString * videoId;
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * subtitle;
+@property (nonatomic, retain) NSString * thumbUrl;
+@property (nonatomic, retain) NSNumber * viewCount;
+@property (nonatomic, retain) NSNumber * watchCount;
+@property (nonatomic, retain) Search *search;
 
 @end
