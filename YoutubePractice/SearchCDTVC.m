@@ -20,9 +20,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.refreshControl addTarget:self
-                            action:@selector(refresh)
-                  forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -43,7 +40,6 @@
           completionHandler:^(BOOL success) {
               if (success) {
                   self.managedObjectContext = document.managedObjectContext;
-                  [self refresh];
               }
           }];
     } else if (document.documentState == UIDocumentStateClosed) {
@@ -73,20 +69,6 @@
     } else {
         self.fetchedResultsController = nil;
     }
-}
-
-- (IBAction)refresh
-{
-    [self.refreshControl beginRefreshing];
-    dispatch_queue_t fetchQ = dispatch_queue_create("SearchQueue", NULL);
-    dispatch_async(fetchQ, ^{
-        [self.managedObjectContext performBlock:^{
-            [self.tableView reloadData];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.refreshControl endRefreshing];
-            });
-        }];
-    });
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

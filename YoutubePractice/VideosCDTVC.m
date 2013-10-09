@@ -10,12 +10,16 @@
 #import "YoutubeEmbedViewController.h"
 #import "GoogleFetcher.h"
 #import "Video+Youtube.h"
-
-@interface VideosCDTVC ()
-
-@end
+#import "Search.h"
 
 @implementation VideosCDTVC
+
+- (void)viewDidLoad
+{
+    [self refresh];
+}
+
+
 - (IBAction)refresh
 {
     dispatch_queue_t fetchQ = dispatch_queue_create("Flickr Fetch", NULL);

@@ -7,8 +7,8 @@
 //
 
 #import "CoreDataTableViewController.h"
-#import "Search.h"
-#import "Video.h"
+
+@class Search;
 
 @interface VideosCDTVC : CoreDataTableViewController
 
