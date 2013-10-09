@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="-1350" y="-704"/>
         </scene>
-        <!--Youtube VideosTVC - Videos-->
+        <!--VideosCDTVC - Videos-->
         <scene sceneID="XzR-hQ-WSh">
             <objects>
-                <tableViewController id="oma-X2-apr" customClass="YoutubeVideosTVC" sceneMemberID="viewController">
+                <tableViewController id="oma-X2-apr" customClass="VideosCDTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3o6-gP-cQl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

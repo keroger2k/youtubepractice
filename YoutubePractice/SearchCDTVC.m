@@ -9,6 +9,7 @@
 #import "SearchCDTVC.h"
 #import "Search.h"
 #import "GoogleFetcher.h"
+#import "VideosCDTVC.h"
 
 @interface SearchCDTVC () <UITableViewDataSource>
 
@@ -62,6 +63,16 @@
         self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     } else {
         self.fetchedResultsController = nil;
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    Search *search = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    if ([segue.destinationViewController respondsToSelector:@selector(setSearch:)]) {
+    	[segue.destinationViewController performSelector:@selector(setSearch:) withObject:search];
     }
 }
 
