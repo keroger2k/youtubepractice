@@ -27,6 +27,7 @@
 {
     [super viewWillAppear:animated];
     if (!self.managedObjectContext) [self useDemoDocument];
+    [self.tableView reloadData];
 }
 
 - (void)useDemoDocument
@@ -94,7 +95,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Search Query"];
     Search *search = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = search.query;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d videos", [search.searchResults count]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"banned == 0"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d videos", [[search.searchResults filteredSetUsingPredicate:predicate] count]];
     Video *firstVideo = [[search.searchResults allObjects] firstObject];
     if (firstVideo) {
         UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:firstVideo.thumbUrl]]];

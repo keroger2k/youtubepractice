@@ -46,6 +46,7 @@
         video.title = videoDictionary[@"snippet"][@"title"];
         video.subtitle = videoDictionary[@"snippet"][@"description"];
         video.thumbUrl = videoDictionary[@"snippet"][@"thumbnails"][@"default"][@"url"];
+        video.banned = [NSNumber numberWithBool:NO];
         NSString *s = videoDictionary[@"statistics"][@"viewCount"];
         video.viewCount = [NSNumber numberWithInt:[s integerValue]];
         Search *searchEntity = [Search searchWithString:query inManagedObjectContext:context];

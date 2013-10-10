@@ -12,13 +12,37 @@
 #import "Video+Youtube.h"
 #import "Search.h"
 
+@interface VideosCDTVC()
+@end
+
 @implementation VideosCDTVC
 
 - (void)viewDidLoad
 {
     [self refresh];
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Hide";
+}
+
+- (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        Video *video = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        video.banned = [NSNumber numberWithBool:YES];
+    }
+}
+
+//- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+//{
+//    [super setEditing:editing animated:animated];
+//    [self setupFetchedResultsControllerAll];
+//}
 
 - (IBAction)refresh
 {
@@ -35,6 +59,21 @@
 }
 
 - (void)setupFetchedResultsController
+{
+    NSFetchRequest *reqest = [NSFetchRequest fetchRequestWithEntityName:@"Video"];
+    reqest.predicate = [NSPredicate predicateWithFormat:@"search.query = %@ and banned = 0", self.search.query];
+    reqest.sortDescriptors = [NSArray arrayWithObject:
+                              [NSSortDescriptor sortDescriptorWithKey:@"title"
+                                                            ascending:YES
+                                                             selector:@selector(localizedCaseInsensitiveCompare:)]];
+    self.fetchedResultsController = [[NSFetchedResultsController alloc]
+                                     initWithFetchRequest:reqest
+                                     managedObjectContext:self.search.managedObjectContext
+                                     sectionNameKeyPath:nil
+                                     cacheName:nil];
+}
+
+- (void)setupFetchedResultsControllerAll
 {
     NSFetchRequest *reqest = [NSFetchRequest fetchRequestWithEntityName:@"Video"];
     reqest.predicate = [NSPredicate predicateWithFormat:@"search.query = %@", self.search.query];

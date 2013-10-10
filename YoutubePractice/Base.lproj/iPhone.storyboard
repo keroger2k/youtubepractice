@@ -47,8 +47,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Youtube Video" textLabel="pxl-S4-vLy" detailTextLabel="OtW-Hu-tN6" style="IBUITableViewCellStyleSubtitle" id="N4T-Y0-pg1">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Youtube Video" textLabel="pxl-S4-vLy" detailTextLabel="OtW-Hu-tN6" style="IBUITableViewCellStyleSubtitle" id="N4T-Y0-pg1" customClass="VideoTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N4T-Y0-pg1" id="p1T-Qj-ah2">
@@ -81,7 +82,9 @@
                             <outlet property="delegate" destination="oma-X2-apr" id="c4Y-Rb-BSX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Videos" id="rOg-cl-6IB"/>
+                    <navigationItem key="navigationItem" title="Videos" id="rOg-cl-6IB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="A2k-BQ-dUG"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYr-Wm-chD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

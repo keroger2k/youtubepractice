@@ -33,12 +33,10 @@
                                   forSearch:self.searchText.text
                      inManagedObjectContext:self.managedObjectContext];
             }
-            //[Search searchWithString:self.searchText.text inManagedObjectContext:self.managedObjectContext];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.navigationController popToRootViewControllerAnimated:YES];
-            });
         }];
     });
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
 }
 
 @end

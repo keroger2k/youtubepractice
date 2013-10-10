@@ -1,18 +1,12 @@
 //
-//  Search.m
+//  VideoTableViewCell.h
 //  YoutubePractice
 //
 //  Created by Kyle Rogers on 10/10/13.
 //  Copyright (c) 2013 Kyle Rogers. All rights reserved.
 //
 
-#import "Search.h"
-#import "Video.h"
+#import <UIKit/UIKit.h>
 
-
-@implementation Search
-
-@dynamic query;
-@dynamic searchResults;
-
+@interface VideoTableViewCell : UITableViewCell
 @end
