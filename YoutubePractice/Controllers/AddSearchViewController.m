@@ -8,6 +8,8 @@
 
 #import "AddSearchViewController.h"
 #import "Search+Create.h"
+#import "Video+Youtube.h"
+#import "GoogleFetcher.h"
 
 @interface AddSearchViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *searchText;
@@ -25,7 +27,13 @@
     dispatch_queue_t fetchQ = dispatch_queue_create("Flickr Fetch", NULL);
     dispatch_async(fetchQ, ^{
         [self.managedObjectContext performBlock:^{
-            [Search searchWithString:self.searchText.text inManagedObjectContext:self.managedObjectContext];
+            NSArray *searchResults = [GoogleFetcher searchVideosAndStatisticsWithQuery:self.searchText.text];
+            for (int i = 0; i <[searchResults count]; i++) {
+                [Video videoWithYoutubeInfo:searchResults[i]
+                                  forSearch:self.searchText.text
+                     inManagedObjectContext:self.managedObjectContext];
+            }
+            //[Search searchWithString:self.searchText.text inManagedObjectContext:self.managedObjectContext];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.navigationController popToRootViewControllerAnimated:YES];
             });

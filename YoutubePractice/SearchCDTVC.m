@@ -10,6 +10,7 @@
 #import "Search.h"
 #import "GoogleFetcher.h"
 #import "VideosCDTVC.h"
+#import "Video.h"
 
 @interface SearchCDTVC () <UITableViewDataSource>
 
@@ -93,6 +94,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Search Query"];
     Search *search = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = search.query;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d videos", [search.searchResults count]];
+    Video *firstVideo = [[search.searchResults allObjects] firstObject];
+    if (firstVideo) {
+        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:firstVideo.thumbUrl]]];
+        [cell.imageView setImage:image];
+    }
     return cell;
 }
 
