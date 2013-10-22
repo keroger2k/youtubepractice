@@ -11,18 +11,33 @@
 #import "Video+Youtube.h"
 #import "GoogleFetcher.h"
 
-@interface AddSearchViewController ()
+@interface AddSearchViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchText;
-
 @end
 
 @implementation AddSearchViewController
+
+- (void)viewDidLoad
+{
+    self.searchText.delegate = self;
+}
 
 - (IBAction)cancel:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)done:(UIBarButtonItem *)sender
+{
+    [self create];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self create];
+    return YES;
+}
+
+- (void)create
 {
     dispatch_queue_t fetchQ = dispatch_queue_create("Flickr Fetch", NULL);
     dispatch_async(fetchQ, ^{
@@ -36,7 +51,6 @@
         }];
     });
     [self.navigationController popToRootViewControllerAnimated:YES];
-
 }
 
 @end
