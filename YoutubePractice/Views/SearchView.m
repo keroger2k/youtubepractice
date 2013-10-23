@@ -22,6 +22,12 @@
     return self;
 }
 
+- (void)setSearch:(Search *)search
+{
+    _search = search;
+    [self setNeedsDisplay];
+}
+
 
 - (void)drawRect:(CGRect)rect
 {
@@ -33,6 +39,7 @@
     [[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:firstVideo.thumbUrl]]] drawInRect:CGRectMake(0, 0, 296, 223)];
     UILabel *searchLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 190, 300, 40)];
     searchLabel.text = [NSString stringWithFormat:@"  %@", self.search.query];
+    NSLog(@"UIView: Search: \"%@\"", self.search.query);
     searchLabel.textColor = [UIColor lightGrayColor];
     searchLabel.backgroundColor = [UIColor whiteColor];
     searchLabel.font = [UIFont fontWithName:@"Arial-Bold" size:15];

@@ -24,13 +24,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataModelChange:) name:NSManagedObjectContextObjectsDidChangeNotification object:self.managedObjectContext];
     if (!self.managedObjectContext) [self useDemoDocument];
+}
+
+- (void)handleDataModelChange:(NSNotification *)note
+{
+//    NSSet *updatedObjects = [[note userInfo] objectForKey:NSUpdatedObjectsKey];
+//    NSSet *deletedObjects = [[note userInfo] objectForKey:NSDeletedObjectsKey];
+//    NSSet *insertedObjects = [[note userInfo] objectForKey:NSInsertedObjectsKey];
+    
+    [self refresh];
+    [self.searchCollectionView reloadData];
+
+
+    // Do something in response to this
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self refresh];
 }
 
 - (void)useDemoDocument
@@ -62,6 +75,7 @@
 {
     _managedObjectContext = managedObjectContext;
     [self refresh];
+    [self.searchCollectionView reloadData];
 }
 
 - (void)refresh
@@ -72,7 +86,6 @@
                                                                selector:@selector(localizedCaseInsensitiveCompare:)]];
     request.predicate = nil; // all searches
     self.searches = [_managedObjectContext executeFetchRequest:request error:nil];
-    [self.searchCollectionView reloadData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -104,6 +117,7 @@
     SearchCollectionViewCell *cell = (SearchCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"Search" forIndexPath:indexPath];
     Search *search = [self.searches objectAtIndex:indexPath.item];
     cell.searchView.search = search;
+    NSLog(@"UIViewController: Search: \"%@\" Item: %d of %d", search.query, indexPath.item, [self.searches count] -1);
     return cell;
 }
 
