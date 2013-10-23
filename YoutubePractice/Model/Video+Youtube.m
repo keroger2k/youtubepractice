@@ -45,7 +45,7 @@
         video.videoId = videoDictionary[@"id"][@"videoId"];
         video.title = videoDictionary[@"snippet"][@"title"];
         video.subtitle = videoDictionary[@"snippet"][@"description"];
-        video.thumbUrl = videoDictionary[@"snippet"][@"thumbnails"][@"default"][@"url"];
+        video.thumbUrl = videoDictionary[@"snippet"][@"thumbnails"][@"medium"][@"url"];
         video.banned = [NSNumber numberWithBool:NO];
         NSString *s = videoDictionary[@"statistics"][@"viewCount"];
         video.viewCount = [NSNumber numberWithInt:[s integerValue]];

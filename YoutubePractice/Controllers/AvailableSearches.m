@@ -21,11 +21,16 @@
 
 @implementation AvailableSearches
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    if (!self.managedObjectContext) [self useDemoDocument];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (!self.managedObjectContext) [self useDemoDocument];
-    [self.searchCollectionView reloadData];
+    [self refresh];
 }
 
 - (void)useDemoDocument
@@ -56,6 +61,11 @@
 - (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
     _managedObjectContext = managedObjectContext;
+    [self refresh];
+}
+
+- (void)refresh
+{
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Search"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"query"
                                                               ascending:YES
@@ -67,17 +77,20 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSIndexPath *indexPath = [self.searchCollectionView indexPathForCell:sender];
-    Search *search = [self.searches objectAtIndex:indexPath.item];
-    
     if ([segue.identifier isEqualToString:@"Show Search Results"]) {
+        NSIndexPath *indexPath = [self.searchCollectionView indexPathForCell:sender];
+        Search *search = [self.searches objectAtIndex:indexPath.item];
+        
         if ([segue.destinationViewController respondsToSelector:@selector(setSearch:)]) {
             [segue.destinationViewController performSelector:@selector(setSearch:) withObject:search];
         }
     }
+    if ([segue.identifier isEqualToString:@"Add Search"]) {
+        if ([segue.destinationViewController respondsToSelector:@selector(setManagedObjectContext:)]) {
+            [segue.destinationViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
+        }
+    }
 }
-
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section

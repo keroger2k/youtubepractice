@@ -17,6 +17,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+
     }
     return self;
 }
@@ -24,12 +25,17 @@
 
 - (void)drawRect:(CGRect)rect
 {
+
+    self.layer.borderColor = [[UIColor whiteColor] CGColor];
+    self.layer.borderWidth = 3;
+    
     Video *firstVideo = [[self.search.searchResults allObjects] firstObject];
-    [[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:firstVideo.thumbUrl]]] drawInRect:CGRectMake(0, 0, 200, 150)];
-    UILabel *searchLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 200, 50)];
-    searchLabel.text = [NSString stringWithFormat:@"%@\n%d videos", self.search.query, [self.search.searchResults count]];
-    searchLabel.textColor = [UIColor grayColor];
-    searchLabel.font = [searchLabel.font fontWithSize:15];
+    [[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:firstVideo.thumbUrl]]] drawInRect:CGRectMake(0, 0, 296, 223)];
+    UILabel *searchLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 190, 300, 40)];
+    searchLabel.text = [NSString stringWithFormat:@"  %@", self.search.query];
+    searchLabel.textColor = [UIColor lightGrayColor];
+    searchLabel.backgroundColor = [UIColor whiteColor];
+    searchLabel.font = [UIFont fontWithName:@"Arial-Bold" size:15];
     [self addSubview:searchLabel];
 }
 @end

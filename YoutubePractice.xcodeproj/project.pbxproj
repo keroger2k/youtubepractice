@@ -23,6 +23,7 @@
 		2749535218171312003EEAAE /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 2749534C18171312003EEAAE /* Video.m */; };
 		2749535318171312003EEAAE /* YoutubePractice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2749534D18171312003EEAAE /* YoutubePractice.xcdatamodeld */; };
 		2749535C18171B69003EEAAE /* AvailableSearches.m in Sources */ = {isa = PBXBuildFile; fileRef = 2749535B18171B69003EEAAE /* AvailableSearches.m */; };
+		279CDE82181861E100C80662 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279CDE81181861E100C80662 /* QuartzCore.framework */; };
 		27C3A28917FDF06E000296D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28817FDF06E000296D0 /* Foundation.framework */; };
 		27C3A28B17FDF06E000296D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28A17FDF06E000296D0 /* CoreGraphics.framework */; };
 		27C3A28D17FDF06E000296D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28C17FDF06E000296D0 /* UIKit.framework */; };
@@ -79,6 +80,7 @@
 		2749534E18171312003EEAAE /* YoutubePractice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YoutubePractice.xcdatamodel; sourceTree = "<group>"; };
 		2749535A18171B69003EEAAE /* AvailableSearches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableSearches.h; sourceTree = "<group>"; };
 		2749535B18171B69003EEAAE /* AvailableSearches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableSearches.m; sourceTree = "<group>"; };
+		279CDE81181861E100C80662 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		27C3A28517FDF06E000296D0 /* YoutubePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C3A28817FDF06E000296D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27C3A28A17FDF06E000296D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				279CDE82181861E100C80662 /* QuartzCore.framework in Frameworks */,
 				27C3A28B17FDF06E000296D0 /* CoreGraphics.framework in Frameworks */,
 				27C3A28D17FDF06E000296D0 /* UIKit.framework in Frameworks */,
 				27C3A28917FDF06E000296D0 /* Foundation.framework in Frameworks */,
@@ -188,6 +191,7 @@
 		27C3A28717FDF06E000296D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				279CDE81181861E100C80662 /* QuartzCore.framework */,
 				27C3A28817FDF06E000296D0 /* Foundation.framework */,
 				27C3A28A17FDF06E000296D0 /* CoreGraphics.framework */,
 				27C3A28C17FDF06E000296D0 /* UIKit.framework */,
