@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Kyle Rogers. All rights reserved.
 //
 
-#import "AvailableSearches.h"
+#import "AvailableSearchesCVC.h"
 #import "Search.h"
 #import "Video.h"
 #import "SearchCollectionViewCell.h"
 
-@interface AvailableSearches () <UICollectionViewDataSource>
+@interface AvailableSearchesCVC () <UICollectionViewDataSource>
 
 @property (nonatomic, strong) NSArray *searches;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation AvailableSearches
+@implementation AvailableSearchesCVC
 
 - (void)viewDidLoad
 {

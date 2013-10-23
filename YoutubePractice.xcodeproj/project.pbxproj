@@ -13,17 +13,14 @@
 		27495330181712E7003EEAAE /* GoogleFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2749532E181712E7003EEAAE /* GoogleFetcher.m */; };
 		2749533E181712FD003EEAAE /* AddSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27495333181712FC003EEAAE /* AddSearchViewController.m */; };
 		2749533F181712FD003EEAAE /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27495335181712FC003EEAAE /* CoreDataTableViewController.m */; };
-		27495340181712FD003EEAAE /* SearchCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 27495337181712FC003EEAAE /* SearchCDTVC.m */; };
 		27495341181712FD003EEAAE /* VideosCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 27495339181712FC003EEAAE /* VideosCDTVC.m */; };
 		27495342181712FD003EEAAE /* YoutubeEmbedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2749533B181712FD003EEAAE /* YoutubeEmbedViewController.m */; };
-		27495343181712FD003EEAAE /* YoutubeVideosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2749533D181712FD003EEAAE /* YoutubeVideosTVC.m */; };
 		2749534F18171312003EEAAE /* Search+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 2749534618171312003EEAAE /* Search+Create.m */; };
 		2749535018171312003EEAAE /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 2749534818171312003EEAAE /* Search.m */; };
 		2749535118171312003EEAAE /* Video+Youtube.m in Sources */ = {isa = PBXBuildFile; fileRef = 2749534A18171312003EEAAE /* Video+Youtube.m */; };
 		2749535218171312003EEAAE /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 2749534C18171312003EEAAE /* Video.m */; };
 		2749535318171312003EEAAE /* YoutubePractice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2749534D18171312003EEAAE /* YoutubePractice.xcdatamodeld */; };
-		2749535C18171B69003EEAAE /* AvailableSearches.m in Sources */ = {isa = PBXBuildFile; fileRef = 2749535B18171B69003EEAAE /* AvailableSearches.m */; };
-		279CDE82181861E100C80662 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279CDE81181861E100C80662 /* QuartzCore.framework */; };
+		2749535C18171B69003EEAAE /* AvailableSearchesCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2749535B18171B69003EEAAE /* AvailableSearchesCVC.m */; };
 		27C3A28917FDF06E000296D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28817FDF06E000296D0 /* Foundation.framework */; };
 		27C3A28B17FDF06E000296D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28A17FDF06E000296D0 /* CoreGraphics.framework */; };
 		27C3A28D17FDF06E000296D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28C17FDF06E000296D0 /* UIKit.framework */; };
@@ -61,14 +58,10 @@
 		27495333181712FC003EEAAE /* AddSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSearchViewController.m; sourceTree = "<group>"; };
 		27495334181712FC003EEAAE /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		27495335181712FC003EEAAE /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
-		27495336181712FC003EEAAE /* SearchCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchCDTVC.h; sourceTree = "<group>"; };
-		27495337181712FC003EEAAE /* SearchCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchCDTVC.m; sourceTree = "<group>"; };
 		27495338181712FC003EEAAE /* VideosCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosCDTVC.h; sourceTree = "<group>"; };
 		27495339181712FC003EEAAE /* VideosCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosCDTVC.m; sourceTree = "<group>"; };
 		2749533A181712FC003EEAAE /* YoutubeEmbedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeEmbedViewController.h; sourceTree = "<group>"; };
 		2749533B181712FD003EEAAE /* YoutubeEmbedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeEmbedViewController.m; sourceTree = "<group>"; };
-		2749533C181712FD003EEAAE /* YoutubeVideosTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeVideosTVC.h; sourceTree = "<group>"; };
-		2749533D181712FD003EEAAE /* YoutubeVideosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeVideosTVC.m; sourceTree = "<group>"; };
 		2749534518171312003EEAAE /* Search+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Search+Create.h"; sourceTree = "<group>"; };
 		2749534618171312003EEAAE /* Search+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Search+Create.m"; sourceTree = "<group>"; };
 		2749534718171312003EEAAE /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
@@ -78,9 +71,8 @@
 		2749534B18171312003EEAAE /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
 		2749534C18171312003EEAAE /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
 		2749534E18171312003EEAAE /* YoutubePractice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YoutubePractice.xcdatamodel; sourceTree = "<group>"; };
-		2749535A18171B69003EEAAE /* AvailableSearches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableSearches.h; sourceTree = "<group>"; };
-		2749535B18171B69003EEAAE /* AvailableSearches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableSearches.m; sourceTree = "<group>"; };
-		279CDE81181861E100C80662 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2749535A18171B69003EEAAE /* AvailableSearchesCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableSearchesCVC.h; sourceTree = "<group>"; };
+		2749535B18171B69003EEAAE /* AvailableSearchesCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableSearchesCVC.m; sourceTree = "<group>"; };
 		27C3A28517FDF06E000296D0 /* YoutubePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C3A28817FDF06E000296D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27C3A28A17FDF06E000296D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -102,7 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				279CDE82181861E100C80662 /* QuartzCore.framework in Frameworks */,
 				27C3A28B17FDF06E000296D0 /* CoreGraphics.framework in Frameworks */,
 				27C3A28D17FDF06E000296D0 /* UIKit.framework in Frameworks */,
 				27C3A28917FDF06E000296D0 /* Foundation.framework in Frameworks */,
@@ -139,16 +130,12 @@
 				27495333181712FC003EEAAE /* AddSearchViewController.m */,
 				27495334181712FC003EEAAE /* CoreDataTableViewController.h */,
 				27495335181712FC003EEAAE /* CoreDataTableViewController.m */,
-				27495336181712FC003EEAAE /* SearchCDTVC.h */,
-				27495337181712FC003EEAAE /* SearchCDTVC.m */,
 				27495338181712FC003EEAAE /* VideosCDTVC.h */,
 				27495339181712FC003EEAAE /* VideosCDTVC.m */,
 				2749533A181712FC003EEAAE /* YoutubeEmbedViewController.h */,
 				2749533B181712FD003EEAAE /* YoutubeEmbedViewController.m */,
-				2749533C181712FD003EEAAE /* YoutubeVideosTVC.h */,
-				2749533D181712FD003EEAAE /* YoutubeVideosTVC.m */,
-				2749535A18171B69003EEAAE /* AvailableSearches.h */,
-				2749535B18171B69003EEAAE /* AvailableSearches.m */,
+				2749535A18171B69003EEAAE /* AvailableSearchesCVC.h */,
+				2749535B18171B69003EEAAE /* AvailableSearchesCVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -191,7 +178,6 @@
 		27C3A28717FDF06E000296D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				279CDE81181861E100C80662 /* QuartzCore.framework */,
 				27C3A28817FDF06E000296D0 /* Foundation.framework */,
 				27C3A28A17FDF06E000296D0 /* CoreGraphics.framework */,
 				27C3A28C17FDF06E000296D0 /* UIKit.framework */,
@@ -337,7 +323,6 @@
 			files = (
 				270358391817689900F1AD10 /* SearchView.m in Sources */,
 				27495341181712FD003EEAAE /* VideosCDTVC.m in Sources */,
-				27495340181712FD003EEAAE /* SearchCDTVC.m in Sources */,
 				2749533F181712FD003EEAAE /* CoreDataTableViewController.m in Sources */,
 				2749535118171312003EEAAE /* Video+Youtube.m in Sources */,
 				2749535318171312003EEAAE /* YoutubePractice.xcdatamodeld in Sources */,
@@ -349,8 +334,7 @@
 				2749533E181712FD003EEAAE /* AddSearchViewController.m in Sources */,
 				2749535018171312003EEAAE /* Search.m in Sources */,
 				27C3A29517FDF06E000296D0 /* main.m in Sources */,
-				2749535C18171B69003EEAAE /* AvailableSearches.m in Sources */,
-				27495343181712FD003EEAAE /* YoutubeVideosTVC.m in Sources */,
+				2749535C18171B69003EEAAE /* AvailableSearchesCVC.m in Sources */,
 				2749534F18171312003EEAAE /* Search+Create.m in Sources */,
 				270358361817687800F1AD10 /* SearchCollectionViewCell.m in Sources */,
 			);
