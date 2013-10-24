@@ -31,6 +31,11 @@
             return nil;
         }
         self = [arrayOfViews objectAtIndex:0];
+        self.layer.masksToBounds = NO;
+        self.layer.shadowOpacity = 0.5f;
+        self.layer.shadowRadius = 1.0f;
+        self.layer.shadowOffset = CGSizeZero;
+        self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
     }
     return self;
 }
@@ -46,12 +51,10 @@
     self.videoCountLabel.text = [NSString stringWithFormat:@"%d・videos", [self.search.searchResults count]];
     self.searchTitle.text = self.search.query;
     Video *firstVideo = [[self.search.searchResults allObjects] firstObject];
-    NSLog(@"%@", firstVideo.thumbUrl);
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:firstVideo.thumbUrl]]];
     UIImageView *view = [[UIImageView alloc] initWithFrame:self.searchImageView.frame];
     view.image = image;
     [self addSubview:view];
-
 }
 
 

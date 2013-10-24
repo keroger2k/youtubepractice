@@ -11,7 +11,7 @@
 #import "Video.h"
 #import "SearchCollectionViewCell.h"
 
-@interface AvailableSearchesCVC () <UICollectionViewDataSource>
+@interface AvailableSearchesCVC () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) NSArray *searches;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
@@ -92,9 +92,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"Show Search Results"]) {
-        NSIndexPath *indexPath = [self.searchCollectionView indexPathForCell:sender];
+        NSIndexPath * indexPath = (NSIndexPath*)sender;
         Search *search = [self.searches objectAtIndex:indexPath.item];
-        
         if ([segue.destinationViewController respondsToSelector:@selector(setSearch:)]) {
             [segue.destinationViewController performSelector:@selector(setSearch:) withObject:search];
         }
@@ -104,6 +103,11 @@
             [segue.destinationViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
         }
     }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"Show Search Results" sender:indexPath];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
@@ -118,12 +122,6 @@
     SearchCollectionViewCell *cell = (SearchCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"Search" forIndexPath:indexPath];
     Search *search = [self.searches objectAtIndex:indexPath.item];
     cell.search = search;
-    cell.layer.masksToBounds = NO;
-    cell.layer.shadowOpacity = 0.5f;
-    cell.layer.shadowRadius = 1.0f;
-    cell.layer.shadowOffset = CGSizeZero;
-    cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
-    NSLog(@"UIViewController: Search: \"%@\" Item: %d of %d", search.query, indexPath.item, [self.searches count] -1);
     return cell;
 }
 

@@ -170,12 +170,13 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="oma-X2-apr" kind="push" identifier="Show Search Results" id="zhe-Kr-t8x"/>
+                                    <segue destination="oma-X2-apr" kind="push" identifier="Show Search Results" id="szy-70-Ocj"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
                             <outlet property="dataSource" destination="zPq-rb-v99" id="llw-Se-0R5"/>
+                            <outlet property="delegate" destination="zPq-rb-v99" id="0E2-fh-Mdg"/>
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Searches To Watch" id="6Gz-sp-Hdo">
