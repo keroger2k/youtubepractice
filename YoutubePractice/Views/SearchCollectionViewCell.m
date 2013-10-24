@@ -7,23 +7,52 @@
 //
 
 #import "SearchCollectionViewCell.h"
+#import "Search.h"
+#import "video.h"
+
+@interface SearchCollectionViewCell()
+@property (strong, nonatomic) IBOutlet UIImageView *searchImageView;
+@property (weak, nonatomic) IBOutlet UILabel *searchTitle;
+@property (weak, nonatomic) IBOutlet UILabel *videoCountLabel;
+
+@end
 
 @implementation SearchCollectionViewCell
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
     if (self) {
+        NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"SearchCollectionViewCell" owner:self options:nil];
+        if ([arrayOfViews count] < 1) {
+            return nil;
+        }
+        if (![[arrayOfViews objectAtIndex:0] isKindOfClass:[UICollectionViewCell class]]) {
+            return nil;
+        }
+        self = [arrayOfViews objectAtIndex:0];
     }
     return self;
 }
 
-- (void)drawRect:(CGRect)rect
+- (void)setSearch:(Search *)search
 {
-    self.layer.masksToBounds = NO;
-    self.layer.shadowOffset = CGSizeMake(1, 1);
-    self.layer.shadowRadius = 1;
-    self.layer.shadowOpacity = 0.2;
+    _search = search;
+    [self updateUI];
 }
+
+- (void)updateUI
+{
+    self.videoCountLabel.text = [NSString stringWithFormat:@"%d・videos", [self.search.searchResults count]];
+    self.searchTitle.text = self.search.query;
+    Video *firstVideo = [[self.search.searchResults allObjects] firstObject];
+    NSLog(@"%@", firstVideo.thumbUrl);
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:firstVideo.thumbUrl]]];
+    UIImageView *view = [[UIImageView alloc] initWithFrame:self.searchImageView.frame];
+    view.image = image;
+    [self addSubview:view];
+
+}
+
 
 @end

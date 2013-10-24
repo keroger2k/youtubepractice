@@ -25,6 +25,7 @@
 {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataModelChange:) name:NSManagedObjectContextObjectsDidChangeNotification object:self.managedObjectContext];
+    [self.searchCollectionView registerClass:[SearchCollectionViewCell class] forCellWithReuseIdentifier:@"Search"];
     if (!self.managedObjectContext) [self useDemoDocument];
 }
 
@@ -116,7 +117,12 @@
 {
     SearchCollectionViewCell *cell = (SearchCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"Search" forIndexPath:indexPath];
     Search *search = [self.searches objectAtIndex:indexPath.item];
-    cell.searchView.search = search;
+    cell.search = search;
+    cell.layer.masksToBounds = NO;
+    cell.layer.shadowOpacity = 0.5f;
+    cell.layer.shadowRadius = 1.0f;
+    cell.layer.shadowOffset = CGSizeZero;
+    cell.layer.shadowPath = [UIBezierPath bezierPathWithRect:cell.bounds].CGPath;
     NSLog(@"UIViewController: Search: \"%@\" Item: %d of %d", search.query, indexPath.item, [self.searches count] -1);
     return cell;
 }

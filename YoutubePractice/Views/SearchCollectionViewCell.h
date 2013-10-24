@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SearchView.h"
+#import "Search.h"
 
 @interface SearchCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet SearchView *searchView;
+@property (weak, nonatomic) Search *search;
 
 @end

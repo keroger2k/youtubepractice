@@ -155,29 +155,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92079207920792083" green="0.92079207920792083" blue="0.92079207920792083" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f7l-gT-neN">
-                            <size key="itemSize" width="300" height="225"/>
+                            <size key="itemSize" width="300" height="200"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Search" id="3wP-DF-fwd" customClass="SearchCollectionViewCell">
-                                <rect key="frame" x="10" y="74" width="300" height="225"/>
+                                <rect key="frame" x="10" y="74" width="300" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="225"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbd-La-WBR" customClass="SearchView">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="225"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        </view>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <outlet property="searchView" destination="gbd-La-WBR" id="v06-Gj-0t3"/>
                                     <segue destination="oma-X2-apr" kind="push" identifier="Show Search Results" id="zhe-Kr-t8x"/>
                                 </connections>
                             </collectionViewCell>
