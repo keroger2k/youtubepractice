@@ -48,9 +48,9 @@
                                   forSearch:self.searchText.text
                      inManagedObjectContext:self.managedObjectContext];
             }
-            [self.navigationController popToRootViewControllerAnimated:YES];
         }];
     });
-    }
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 @end

@@ -1,16 +1,17 @@
 //
-//  SearchCollectionViewCell.h
+//  SearchTableViewCell.h
 //  YoutubePractice
 //
-//  Created by Kyle Rogers on 10/22/13.
+//  Created by Kyle Rogers on 10/25/13.
 //  Copyright (c) 2013 Kyle Rogers. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "Search.h"
 
-@interface SearchCollectionViewCell : UICollectionViewCell
+@interface SearchTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) Search *search;
+
 
 @end

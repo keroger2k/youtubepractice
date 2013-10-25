@@ -146,54 +146,6 @@
             </objects>
             <point key="canvasLocation" x="-3132" y="-308"/>
         </scene>
-        <!--Available SearchesCVC - Searches To Watch-->
-        <scene sceneID="Hfz-cW-QAx">
-            <objects>
-                <viewController id="zPq-rb-v99" customClass="AvailableSearchesCVC" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="alV-PG-sin">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.92079207920792083" green="0.92079207920792083" blue="0.92079207920792083" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f7l-gT-neN">
-                            <size key="itemSize" width="300" height="200"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Search" id="3wP-DF-fwd" customClass="SearchCollectionViewCell">
-                                <rect key="frame" x="10" y="74" width="300" height="200"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <connections>
-                                    <segue destination="oma-X2-apr" kind="push" identifier="Show Search Results" id="szy-70-Ocj"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="zPq-rb-v99" id="llw-Se-0R5"/>
-                            <outlet property="delegate" destination="zPq-rb-v99" id="0E2-fh-Mdg"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Searches To Watch" id="6Gz-sp-Hdo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QrT-qA-KRl">
-                            <connections>
-                                <segue destination="p7X-IA-wmP" kind="push" identifier="Add Search" id="enh-aA-H4X"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="searchCollectionView" destination="alV-PG-sin" id="2Vz-UK-FCJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="itZ-vR-smh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3749" y="-734"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Oxy-XZ-6dz">
             <objects>
@@ -205,12 +157,75 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zPq-rb-v99" kind="relationship" relationship="rootViewController" id="bp8-AL-99a"/>
+                        <segue destination="hbQ-UE-RP7" kind="relationship" relationship="rootViewController" id="Ky2-cB-hwb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGt-ph-Paa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4314" y="-734"/>
+            <point key="canvasLocation" x="-4396" y="-779"/>
+        </scene>
+        <!--Available SearchesCDTVC-->
+        <scene sceneID="1IW-WM-zD6">
+            <objects>
+                <tableViewController id="hbQ-UE-RP7" customClass="AvailableSearchesCDTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="185" sectionHeaderHeight="1" sectionFooterHeight="1" id="0zh-PI-Ey4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.90099009900000004" green="0.90099009900000004" blue="0.90099009900000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" rowHeight="200" id="3Ok-B0-aKI" customClass="SearchTableViewCell">
+                                <rect key="frame" x="0.0" y="65" width="320" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Ok-B0-aKI" id="kiF-My-KCM">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIE-na-84Z">
+                                            <rect key="frame" x="7" y="10" width="306" height="180"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ig-4a-K2r">
+                                                    <rect key="frame" x="2" y="2.5" width="301" height="140"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaG-Wm-qrm">
+                                                    <rect key="frame" x="15" y="145" width="266" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.90099009900000004" green="0.90099009900000004" blue="0.90099009900000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="content" destination="eIE-na-84Z" id="cUM-8H-niE"/>
+                                    <outlet property="searchImageView" destination="2ig-4a-K2r" id="Fbh-ET-fRu"/>
+                                    <outlet property="searchTitle" destination="LaG-Wm-qrm" id="Be6-rh-y1b"/>
+                                    <segue destination="oma-X2-apr" kind="push" identifier="Show Search Results" id="Lpo-ft-F97"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hbQ-UE-RP7" id="KER-Tb-suX"/>
+                            <outlet property="delegate" destination="hbQ-UE-RP7" id="Zaa-tr-vjQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="5l2-dE-Xdt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vvZ-tu-Fmq">
+                            <connections>
+                                <segue destination="p7X-IA-wmP" kind="push" identifier="Add Search" id="kQP-pp-CYP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wbA-GK-3mj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3846" y="-765"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
