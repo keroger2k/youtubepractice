@@ -21,6 +21,8 @@
 		2749535318171312003EEAAE /* YoutubePractice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2749534D18171312003EEAAE /* YoutubePractice.xcdatamodeld */; };
 		2749535C18171B69003EEAAE /* AvailableSearchesCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2749535B18171B69003EEAAE /* AvailableSearchesCVC.m */; };
 		279CDE861818BE9C00C80662 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279CDE851818BE9C00C80662 /* SearchCollectionViewCell.xib */; };
+		279CDE891819EBD300C80662 /* overflow_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 279CDE871819EBD300C80662 /* overflow_2x.png */; };
+		279CDE8A1819EBD300C80662 /* overflow.png in Resources */ = {isa = PBXBuildFile; fileRef = 279CDE881819EBD300C80662 /* overflow.png */; };
 		27C3A28917FDF06E000296D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28817FDF06E000296D0 /* Foundation.framework */; };
 		27C3A28B17FDF06E000296D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28A17FDF06E000296D0 /* CoreGraphics.framework */; };
 		27C3A28D17FDF06E000296D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28C17FDF06E000296D0 /* UIKit.framework */; };
@@ -72,6 +74,8 @@
 		2749535A18171B69003EEAAE /* AvailableSearchesCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableSearchesCVC.h; sourceTree = "<group>"; };
 		2749535B18171B69003EEAAE /* AvailableSearchesCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableSearchesCVC.m; sourceTree = "<group>"; };
 		279CDE851818BE9C00C80662 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		279CDE871819EBD300C80662 /* overflow_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overflow_2x.png; path = "../../Desktop/YouTube 2.2.0/Payload/YouTube.app/UILibResources.bundle/overflow_2x.png"; sourceTree = "<group>"; };
+		279CDE881819EBD300C80662 /* overflow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = overflow.png; path = "../../Desktop/YouTube 2.2.0/Payload/YouTube.app/UILibResources.bundle/overflow.png"; sourceTree = "<group>"; };
 		27C3A28517FDF06E000296D0 /* YoutubePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C3A28817FDF06E000296D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27C3A28A17FDF06E000296D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -158,6 +162,8 @@
 		27C3A27C17FDF06E000296D0 = {
 			isa = PBXGroup;
 			children = (
+				279CDE871819EBD300C80662 /* overflow_2x.png */,
+				279CDE881819EBD300C80662 /* overflow.png */,
 				27F42C1F180213D200D10798 /* Default-568h@2x.png */,
 				27C3A28E17FDF06E000296D0 /* YoutubePractice */,
 				27C3A28717FDF06E000296D0 /* Frameworks */,
@@ -303,6 +309,8 @@
 				27C3A29C17FDF06E000296D0 /* iPhone.storyboard in Resources */,
 				279CDE861818BE9C00C80662 /* SearchCollectionViewCell.xib in Resources */,
 				27F42C20180213D200D10798 /* Default-568h@2x.png in Resources */,
+				279CDE891819EBD300C80662 /* overflow_2x.png in Resources */,
+				279CDE8A1819EBD300C80662 /* overflow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

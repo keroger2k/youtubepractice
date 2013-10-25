@@ -10,11 +10,9 @@
 #import "Search.h"
 #import "video.h"
 
-@interface SearchCollectionViewCell()
+@interface SearchCollectionViewCell() <UIActionSheetDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *searchImageView;
 @property (weak, nonatomic) IBOutlet UILabel *searchTitle;
-@property (weak, nonatomic) IBOutlet UILabel *videoCountLabel;
-
 @end
 
 @implementation SearchCollectionViewCell
@@ -48,7 +46,6 @@
 
 - (void)updateUI
 {
-    self.videoCountLabel.text = [NSString stringWithFormat:@"%d・videos", [self.search.searchResults count]];
     self.searchTitle.text = self.search.query;
     Video *firstVideo = [[self.search.searchResults allObjects] firstObject];
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:firstVideo.thumbUrl]]];
@@ -56,6 +53,5 @@
     view.image = image;
     [self addSubview:view];
 }
-
 
 @end

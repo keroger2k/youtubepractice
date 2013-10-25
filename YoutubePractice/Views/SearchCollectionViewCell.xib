@@ -24,16 +24,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2L-Tb-N9Y" userLabel="videoCountLabel">
-                    <rect key="frame" x="143" y="172" width="152" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="XTe-xT-Zug"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" red="0.62380105198019797" green="0.62380105198019797" blue="0.62380105198019797" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -41,7 +31,6 @@
             <connections>
                 <outlet property="searchImageView" destination="1ca-82-Res" id="r6c-FY-8rc"/>
                 <outlet property="searchTitle" destination="O4j-1a-LTW" id="hjJ-5e-f0Y"/>
-                <outlet property="videoCountLabel" destination="g2L-Tb-N9Y" id="txi-hD-YG0"/>
             </connections>
         </view>
     </objects>

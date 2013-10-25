@@ -12,11 +12,9 @@
 #import "SearchCollectionViewCell.h"
 
 @interface AvailableSearchesCVC () <UICollectionViewDataSource, UICollectionViewDelegate>
-
 @property (nonatomic, strong) NSArray *searches;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (weak, nonatomic) IBOutlet UICollectionView *searchCollectionView;
-
 @end
 
 @implementation AvailableSearchesCVC
@@ -31,15 +29,8 @@
 
 - (void)handleDataModelChange:(NSNotification *)note
 {
-//    NSSet *updatedObjects = [[note userInfo] objectForKey:NSUpdatedObjectsKey];
-//    NSSet *deletedObjects = [[note userInfo] objectForKey:NSDeletedObjectsKey];
-//    NSSet *insertedObjects = [[note userInfo] objectForKey:NSInsertedObjectsKey];
-    
     [self refresh];
     [self.searchCollectionView reloadData];
-
-
-    // Do something in response to this
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -124,5 +115,7 @@
     cell.search = search;
     return cell;
 }
+
+
 
 @end
