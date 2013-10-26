@@ -10,25 +10,45 @@
 #import "Search.h"
 #import "SearchTableViewCell.h"
 
-@interface AvailableSearchesCDTVC () <UITableViewDataSource, UITableViewDelegate>
+@interface AvailableSearchesCDTVC () <UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (weak, nonatomic) UIActionSheet *searchControlActionSheet;
+@property (nonatomic, strong) Search *selectedSearch;
 @end
 
 @implementation AvailableSearchesCDTVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+#pragma mark - Action Sheet
+
+#define SEARCH_CANCEL @"Cancel"
+#define SEARCH_DELETE @"Delete Search"
+
+- (IBAction)options:(UIButton *)sender {
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+    self.selectedSearch = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+    if (!self.searchControlActionSheet) {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                                 delegate:self
+                                                        cancelButtonTitle:SEARCH_CANCEL
+                                                   destructiveButtonTitle:SEARCH_DELETE
+                                                        otherButtonTitles:nil, nil];
+        [actionSheet showInView:self.view];
+        self.searchControlActionSheet = actionSheet;
     }
-    return self;
 }
 
-- (void)viewDidLoad
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    [super viewDidLoad];
-    
+    if (buttonIndex == actionSheet.destructiveButtonIndex) {
+        NSLog(@"Delete %@", self.selectedSearch.query);
+        for (NSManagedObject *vid in [self.selectedSearch.searchResults allObjects]) {
+            [self.managedObjectContext deleteObject:vid];
+        }
+        [self.managedObjectContext deleteObject:self.selectedSearch];
+        self.selectedSearch = nil;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -36,6 +56,8 @@
     [super viewWillAppear:animated];
     if (!self.managedObjectContext) [self useDemoDocument];
     [self.tableView reloadData];
+    
+    //Need to figure out how to make entire window this color?
     CGRect frame = self.tableView.bounds;
     frame.origin.y = -frame.size.height;
     UIView* grayView = [[UIView alloc] initWithFrame:frame];
@@ -45,7 +67,6 @@
                                                 alpha:.1f];
     [self.tableView addSubview:grayView];
 }
-
 
 - (void)useDemoDocument
 {

@@ -8,6 +8,7 @@
 
 #import "VideosCDTVC.h"
 #import "YoutubeEmbedViewController.h"
+#import "VideoTableViewCell.h"
 #import "GoogleFetcher.h"
 #import "Video+Youtube.h"
 #import "Search.h"
@@ -103,21 +104,17 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Youtube Video";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (!cell) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                             reuseIdentifier:CellIdentifier];
-    
+    VideoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Youtube Video"];
     Video *video = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = video.title;
-    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    NSString* commaString = [numberFormatter stringFromNumber:video.viewCount];
-    
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Views: %@・%@", commaString, video.subtitle];
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:video.thumbUrl]]];
-    [cell.imageView setImage:image];
+    cell.video = video;
+//    cell.textLabel.text = video.title;
+//    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+//    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+//    NSString* commaString = [numberFormatter stringFromNumber:video.viewCount];
+//    
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"Views: %@・%@", commaString, video.subtitle];
+//    cell.imageView [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:video.thumbUrl]]];
+//    [cell.imageView setImage:image];
     
     return cell;
 }
@@ -135,6 +132,16 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             }
         }
     }
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 5)];
+    [view setBackgroundColor:[UIColor colorWithRed:0.0f
+                                              green:0.0f
+                                               blue:0.0f
+                                              alpha:.1f]]; //your background color...
+    return view;
 }
 
 

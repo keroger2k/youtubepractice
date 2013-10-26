@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Video.h"
 
 @interface VideoTableViewCell : UITableViewCell
+@property (weak,nonatomic) Video *video;
 @end
