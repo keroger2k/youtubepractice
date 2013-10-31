@@ -14,9 +14,24 @@
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (weak, nonatomic) UIActionSheet *searchControlActionSheet;
 @property (nonatomic, strong) Search *selectedSearch;
+@property (nonatomic) BOOL setBackground;
 @end
 
 @implementation AvailableSearchesCDTVC
+
+- (NSUInteger) supportedInterfaceOrientations {
+    // Return a bitmask of supported orientations. If you need more,
+    // use bitwise or (see the commented return).
+    return UIInterfaceOrientationMaskPortrait;
+    // return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown;
+}
+
+- (UIInterfaceOrientation) preferredInterfaceOrientationForPresentation {
+    // Return the orientation you'd prefer - this is what it launches to. The
+    // user can still rotate. You don't have to implement this method, in which
+    // case it launches in the current orientation
+    return UIInterfaceOrientationPortrait;
+}
 
 #pragma mark - Action Sheet
 
@@ -56,16 +71,18 @@
     [super viewWillAppear:animated];
     if (!self.managedObjectContext) [self useDemoDocument];
     [self.tableView reloadData];
-    
     //Need to figure out how to make entire window this color?
-    CGRect frame = self.tableView.bounds;
-    frame.origin.y = -frame.size.height;
-    UIView* grayView = [[UIView alloc] initWithFrame:frame];
-    grayView.backgroundColor = [UIColor colorWithRed:0.0f
-                                                green:0.0f
-                                                 blue:0.0f
-                                                alpha:.1f];
-    [self.tableView addSubview:grayView];
+    if(!self.setBackground) {
+        CGRect frame = self.tableView.bounds;
+        frame.origin.y = -frame.size.height;
+        UIView* grayView = [[UIView alloc] initWithFrame:CGRectMake(0, -frame.size.height, frame.size.width, 9000)];
+        grayView.backgroundColor = [UIColor colorWithRed:0.0f
+                                                    green:0.0f
+                                                     blue:0.0f
+                                                    alpha:.1f];
+        [self.tableView insertSubview:grayView atIndex:0];
+        self.setBackground = YES;
+    }
 }
 
 - (void)useDemoDocument

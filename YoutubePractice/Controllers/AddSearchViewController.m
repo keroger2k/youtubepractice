@@ -11,7 +11,7 @@
 #import "Video+Youtube.h"
 #import "GoogleFetcher.h"
 
-@interface AddSearchViewController () <UITextFieldDelegate>
+@interface AddSearchViewController () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchText;
 @end
 
@@ -20,6 +20,12 @@
 - (void)viewDidLoad
 {
     self.searchText.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.searchText becomeFirstResponder];
 }
 
 - (IBAction)cancel:(id)sender {

@@ -22,6 +22,7 @@
 		279CDE8A1819EBD300C80662 /* overflow.png in Resources */ = {isa = PBXBuildFile; fileRef = 279CDE881819EBD300C80662 /* overflow.png */; };
 		279CDE8D181A1B7600C80662 /* AvailableSearchesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 279CDE8C181A1B7600C80662 /* AvailableSearchesCDTVC.m */; };
 		279CDE90181AF8C900C80662 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 279CDE8F181AF8C900C80662 /* SearchTableViewCell.m */; };
+		279CDE9518219FD100C80662 /* SearchNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279CDE9418219FD100C80662 /* SearchNavigationController.m */; };
 		27C3A28917FDF06E000296D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28817FDF06E000296D0 /* Foundation.framework */; };
 		27C3A28B17FDF06E000296D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28A17FDF06E000296D0 /* CoreGraphics.framework */; };
 		27C3A28D17FDF06E000296D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3A28C17FDF06E000296D0 /* UIKit.framework */; };
@@ -74,6 +75,8 @@
 		279CDE8C181A1B7600C80662 /* AvailableSearchesCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableSearchesCDTVC.m; sourceTree = "<group>"; };
 		279CDE8E181AF8C900C80662 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
 		279CDE8F181AF8C900C80662 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
+		279CDE9318219FD100C80662 /* SearchNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchNavigationController.h; sourceTree = "<group>"; };
+		279CDE9418219FD100C80662 /* SearchNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchNavigationController.m; sourceTree = "<group>"; };
 		27C3A28517FDF06E000296D0 /* YoutubePractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoutubePractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C3A28817FDF06E000296D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27C3A28A17FDF06E000296D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,6 +140,8 @@
 				2749533B181712FD003EEAAE /* YoutubeEmbedViewController.m */,
 				279CDE8B181A1B7600C80662 /* AvailableSearchesCDTVC.h */,
 				279CDE8C181A1B7600C80662 /* AvailableSearchesCDTVC.m */,
+				279CDE9318219FD100C80662 /* SearchNavigationController.h */,
+				279CDE9418219FD100C80662 /* SearchNavigationController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27495341181712FD003EEAAE /* VideosCDTVC.m in Sources */,
+				279CDE9518219FD100C80662 /* SearchNavigationController.m in Sources */,
 				2749533F181712FD003EEAAE /* CoreDataTableViewController.m in Sources */,
 				2749535118171312003EEAAE /* Video+Youtube.m in Sources */,
 				279CDE90181AF8C900C80662 /* SearchTableViewCell.m in Sources */,

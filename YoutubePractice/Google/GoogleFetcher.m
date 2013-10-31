@@ -22,7 +22,7 @@
 }
 
 #define GOOGLE_API_URL @"https://www.googleapis.com/youtube/v3/"
-#define YOUTUBE_MAX_RESULTS 20
+#define YOUTUBE_MAX_RESULTS 50
 
 + (NSArray *)searchVideosWithQuery:(NSString *)query
 {

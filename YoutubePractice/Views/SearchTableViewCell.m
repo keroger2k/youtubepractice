@@ -30,12 +30,12 @@
     [self.content.layer setCornerRadius:1.0f];
     
     // border
-    //[self.content.layer setBorderColor:[UIColor whiteColor].CGColor];
-    //[self.content.layer setBorderWidth:1.0f];
+    [self.content.layer setBorderColor:[UIColor whiteColor].CGColor];
+    [self.content.layer setBorderWidth:1.0f];
     
     // drop shadow
     [self.content.layer setShadowColor:[UIColor lightGrayColor].CGColor];
-    [self.content.layer setShadowOpacity:0.5];
+    [self.content.layer setShadowOpacity:0.9];
     [self.content.layer setShadowRadius:1.0];
     [self.content.layer setShadowOffset:CGSizeMake(1.0, 1.0)];
     self.searchTitle.text = self.search.query;

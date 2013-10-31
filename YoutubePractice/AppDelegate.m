@@ -7,12 +7,35 @@
 //
 
 #import "AppDelegate.h"
+#import "SearchNavigationController.h"
+#import "AvailableSearchesCDTVC.h"
 
 @implementation AppDelegate
 
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window  // iOS 6 autorotation fix
+{
+    return UIInterfaceOrientationMaskAll;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+//    // set initial view
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    
+//    UIViewController *viewController = [[AvailableSearchesCDTVC alloc] init];
+//    
+//    UINavigationController *navigationController = [[SearchNavigationController alloc]
+//                            initWithRootViewController:viewController]; // iOS 6 autorotation fix
+//    [navigationController setNavigationBarHidden:YES animated:NO];
+//    
+//    self.window = [[UIWindow alloc]
+//                   initWithFrame:[[UIScreen mainScreen] bounds]];
+//    
+//    [self.window setRootViewController:navigationController]; // iOS 6 autorotation fix
+//    //[self.window addSubview:navigationController.view];
+//    
+//    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							

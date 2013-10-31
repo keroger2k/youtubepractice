@@ -70,6 +70,16 @@
 }
 
 
+- (NSUInteger)supportedInterfaceOrientations // iOS 6 autorotation fix
+{
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation // iOS 6 autorotation fix
+{
+    return UIInterfaceOrientationLandscapeLeft;
+}
+
 
 
 @end

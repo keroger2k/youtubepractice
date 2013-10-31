@@ -14,14 +14,45 @@
 #import "Search.h"
 
 @interface VideosCDTVC()
+@property (nonatomic) BOOL setBackground;
 @end
 
 @implementation VideosCDTVC
+
+- (NSUInteger) supportedInterfaceOrientations {
+    // Return a bitmask of supported orientations. If you need more,
+    // use bitwise or (see the commented return).
+    return UIInterfaceOrientationMaskPortrait;
+    // return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown;
+}
+
+- (UIInterfaceOrientation) preferredInterfaceOrientationForPresentation {
+    // Return the orientation you'd prefer - this is what it launches to. The
+    // user can still rotate. You don't have to implement this method, in which
+    // case it launches in the current orientation
+    return UIInterfaceOrientationPortrait;
+}
 
 - (void)viewDidLoad
 {
     [self refresh];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if(!self.setBackground) {
+        CGRect frame = self.tableView.bounds;
+        frame.origin.y = -frame.size.height;
+        UIView* grayView = [[UIView alloc] initWithFrame:CGRectMake(0, -frame.size.height, frame.size.width, 9000)];
+        grayView.backgroundColor = [UIColor colorWithRed:0.0f
+                                                   green:0.0f
+                                                    blue:0.0f
+                                                   alpha:.1f];
+        [self.tableView insertSubview:grayView atIndex:0];
+        self.setBackground = YES;
+    }
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -38,12 +69,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         video.banned = [NSNumber numberWithBool:YES];
     }
 }
-
-//- (void)setEditing:(BOOL)editing animated:(BOOL)animated
-//{
-//    [super setEditing:editing animated:animated];
-//    [self setupFetchedResultsControllerAll];
-//}
 
 - (IBAction)refresh
 {
@@ -107,15 +132,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     VideoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Youtube Video"];
     Video *video = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.video = video;
-//    cell.textLabel.text = video.title;
-//    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-//    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-//    NSString* commaString = [numberFormatter stringFromNumber:video.viewCount];
-//    
-//    cell.detailTextLabel.text = [NSString stringWithFormat:@"Views: %@・%@", commaString, video.subtitle];
-//    cell.imageView [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:video.thumbUrl]]];
-//    [cell.imageView setImage:image];
-    
     return cell;
 }
 
@@ -132,16 +148,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             }
         }
     }
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 5)];
-    [view setBackgroundColor:[UIColor colorWithRed:0.0f
-                                              green:0.0f
-                                               blue:0.0f
-                                              alpha:.1f]]; //your background color...
-    return view;
 }
 
 
